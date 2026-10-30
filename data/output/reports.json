@@ -1,0 +1,58 @@
+[
+  {
+    "id": "fy2021_22",
+    "file_name": "ar_fy2021_22.pdf",
+    "fiscal_year": "FY2021/22",
+    "page_count": 109,
+    "status": "done",
+    "progress": null,
+    "error": null,
+    "model": "gemini-3.5-flash",
+    "created_at": "2026-10-29T05:27:46+00:00",
+    "processed_at": "2026-10-30T03:29:52+00:00",
+    "finding_count": 8,
+    "bookmarks_corrected": 3
+  },
+  {
+    "id": "fy2022_23",
+    "file_name": "ar_fy2022_23.pdf",
+    "fiscal_year": "FY2022/23",
+    "page_count": 113,
+    "status": "done",
+    "progress": null,
+    "error": null,
+    "model": "gemini-3.5-flash",
+    "created_at": "2026-10-29T05:27:46+00:00",
+    "processed_at": "2026-10-30T03:29:52+00:00",
+    "finding_count": 18,
+    "bookmarks_corrected": 0
+  },
+  {
+    "id": "fy2023_24",
+    "file_name": "ar_fy2023_24.pdf",
+    "fiscal_year": "FY2023/24",
+    "page_count": 122,
+    "status": "done",
+    "progress": null,
+    "error": null,
+    "model": "gemini-3.5-flash",
+    "created_at": "2026-10-29T05:27:46+00:00",
+    "processed_at": "2026-10-30T03:31:25+00:00",
+    "finding_count": 14,
+    "bookmarks_corrected": 0
+  },
+  {
+    "id": "fy2024_25",
+    "file_name": "ar_fy2024_25.pdf",
+    "fiscal_year": "FY2024/25",
+    "page_count": 98,
+    "status": "done",
+    "progress": null,
+    "error": null,
+    "model": "gemini-3.5-flash",
+    "created_at": "2026-10-29T05:27:46+00:00",
+    "processed_at": "2026-10-30T03:33:01+00:00",
+    "finding_count": 8,
+    "bookmarks_corrected": 0
+  }
+]

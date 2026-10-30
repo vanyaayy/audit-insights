@@ -1,0 +1,2142 @@
+[
+  {
+    "observation_title": "Errors in Payment of Flexible Benefits Allowances",
+    "ministry": "Ministry of Defence",
+    "entity": "Ministry of Defence",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "Flaws in system logic and unvalidated HR data entries in MINDEF's HR system resulted in overpayments of flexible benefits allowances to personnel.",
+    "key_facts": [
+      "Overpayments totalling $27,600 found across 202 personnel for FY2019/20 to FY2020/21",
+      "195 personnel overpaid by $24,315 due to a system logic flaw with no pro-ration when crossing allowance tiers",
+      "4 personnel overpaid by $2,599 due to un-updated re-employment dates in the HR system",
+      "3 personnel overpaid by $686 because a system program failed to detect changes to service periods"
+    ],
+    "root_cause": "System logic flaw under specific scenarios and lack of consistent, prompt accuracy checks over entry of personnel re-employment data into the HR system.",
+    "risk_impact": "Inaccurate allowance computations and financial overpayment of public funds.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments actually resulted, with overpayments totalling $27,600 made to 202 personnel due to system logic flaws and HR data errors.",
+    "criteria_breached": [],
+    "management_response": "MINDEF rectified data errors, recovered overpayments from 193 personnel, and commenced recovery for remaining cases. It committed to thoroughly testing computation logic scenarios before implementing system changes and enhancing data input processes.",
+    "evidence": [
+      {
+        "pdf_page": 27,
+        "quote": "The test checks found overpayments (totalling $995) in three cases, comprising two cases due to a system logic flaw and one case due to an error in the date of re-employment in the Human Resource (HR) system.",
+        "printed_page": "17",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 27,
+        "quote": "195 personnel were overpaid by $24,315, due to a system logic flaw which resulted in no pro-ration of allowance for personnel who crossed to a higher tier of allowance within the year.",
+        "printed_page": "17",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2021_22-01",
+    "report_id": "fy2021_22",
+    "fiscal_year": "FY2021/22",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "GSTV-U-Save Rebates Given to Ineligible Households",
+    "ministry": "Ministry of Finance",
+    "entity": "Goods and Services Tax Voucher Fund",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "Weaknesses in system eligibility validation due to time lags in data updates resulted in GSTV-U-Save rebates being disbursed to ineligible households.",
+    "key_facts": [
+      "5,120 instances where U-Save rebates amounting to $864,500 could have been given to 3,166 ineligible households",
+      "3,143 households where registered Singapore Citizen owners/occupiers had passed away",
+      "23 households where there were no Singapore Citizens among registered owners/occupiers"
+    ],
+    "root_cause": "Time lag issues in the data used for determining the eligibility for U-Save rebates.",
+    "risk_impact": "Disbursement of public funds to ineligible households.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments actually resulted, with $864,500 in rebates given to 3,166 ineligible households due to data time lags in eligibility checks.",
+    "criteria_breached": [
+      "GSTV Fund Regulations"
+    ],
+    "management_response": "MOF stated it would work with HDB and ICA to ensure updated living and citizenship status data are used for eligibility checks, and review the feasibility of recovering the rebates.",
+    "evidence": [
+      {
+        "pdf_page": 29,
+        "quote": "AGO’s data analysis identified 5,120 instances where U-Save rebates amounting to $864,500 could have been given to 3,166 ineligible households.",
+        "printed_page": "19",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 29,
+        "quote": "AGO noted that these cases arose mostly due to time lag issues in the data used for determining the eligibility for U-Save rebates.",
+        "printed_page": "19",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2021_22-02",
+    "report_id": "fy2021_22",
+    "fiscal_year": "FY2021/22",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Management of Accounts in IT System",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Community Care Endowment Fund",
+    "system": "Social Service Net",
+    "audit_type": "IT general controls",
+    "control_domain": "Account provisioning and removal",
+    "secondary_domains": [
+      "Privileged access management"
+    ],
+    "issue_summary": "MSF failed to promptly remove unneeded user, agency, and vendor IT administrator accounts in SSNet after users left or accounts were no longer required, leading to unauthorised access.",
+    "key_facts": [
+      "376 of 627 checked accounts (60%) belonging to left staff had delays in removal ranging from 1 day to 1,956 days",
+      "27 accounts had logins after the user's last day of service, including 10 unauthorised logins accessing case information",
+      "59 agency migration accounts with access to create/edit applications remained unremoved since 2016",
+      "1 vendor system administrator account remained active from Dec 2020 to Mar 2022"
+    ],
+    "root_cause": null,
+    "risk_impact": "Risk of unauthorised activities such as changes to quantum of assistance and compromise of sensitive applicant and beneficiary information.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Unauthorised access actually occurred, with 10 accounts logged into after users' last day of service to access case information.",
+    "criteria_breached": [
+      "Government Instruction Manual on ICT and Smart Systems Management"
+    ],
+    "management_response": "MSF terminated unneeded active accounts, issued process reminders, removed agency and vendor admin accounts, and plans to automate account termination by interfacing SSNet with Whole-of-Government Central Accounts Management by end 2022.",
+    "evidence": [
+      {
+        "pdf_page": 35,
+        "quote": "AGO’s test checks on 627 SSNet accounts as at 30 September 2021 found delays in removing 376 accounts (or 60 per cent) belonging to users who had left MSF.",
+        "printed_page": "25",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 35,
+        "quote": "MSF also said that logins for the remaining 10 accounts were unauthorised.",
+        "printed_page": "25",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 36,
+        "quote": "In addition, AGO found that 59 agency accounts were not removed from SSNet although they were no longer required since 2016.",
+        "printed_page": "26",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2021_22-03",
+    "report_id": "fy2021_22",
+    "fiscal_year": "FY2021/22",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Management of Accounts in IT System",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Community Care Endowment Fund",
+    "system": "Social Service Net",
+    "audit_type": "IT general controls",
+    "control_domain": "Periodic access review",
+    "secondary_domains": [],
+    "issue_summary": "Monthly user account reviews for SSNet were ineffective in ensuring that accounts of staff who had left service were promptly identified and removed.",
+    "key_facts": [
+      "5 out of 8 user accounts test-checked in monthly review reports (Jan to Jun 2021) were removed more than two months after users left service"
+    ],
+    "root_cause": "Staff conducting monthly reviews were not sufficiently diligent in their checks.",
+    "risk_impact": "Inability to detect and terminate unneeded user access promptly, leaving the system exposed to risk of unmonitored or inappropriate access.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "A control gap in periodic access reviews that creates a realistic risk of unneeded access persisting, but without direct evidence of wrong payments resulting from the review lapse itself.",
+    "criteria_breached": [
+      "Government Instruction Manual on ICT and Smart Systems Management"
+    ],
+    "management_response": "MSF took steps to remind users of proper processes and will implement automated account termination via CAM interface by end 2022.",
+    "evidence": [
+      {
+        "pdf_page": 36,
+        "quote": "AGO’s test checks of eight user accounts in monthly review reports for the period January 2021 to June 2021 found that five of the accounts were removed more than two months after the users had left service.",
+        "printed_page": "26",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 36,
+        "quote": "While MSF had a process for monthly reviews, it was not effective in ensuring that unneeded accounts were promptly removed.",
+        "printed_page": "26",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2021_22-04",
+    "report_id": "fy2021_22",
+    "fiscal_year": "FY2021/22",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Lapses in Management of Grants",
+    "ministry": "Ministry of Education",
+    "entity": "SkillsFuture Singapore Agency",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "SSG disbursed grants and SkillsFuture Credit to individuals and companies that were disallowed funding due to IT system errors and limitations in manual checks.",
+    "key_facts": [
+      "$269,100 disbursed in grants and SkillsFuture Credit",
+      "295 individuals and 3 companies affected",
+      "Recipients were disallowed funding due to fraud investigations or outstanding refunds owed to SSG"
+    ],
+    "root_cause": "IT system errors and limitations in manual checks by its service provider.",
+    "risk_impact": "Public funds were disbursed to ineligible individuals and companies that had been explicitly disallowed funding due to suspected fraud or outstanding refunds.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Actual wrong payments occurred, with $269,100 disbursed to 295 individuals and three companies disallowed funding.",
+    "criteria_breached": [],
+    "management_response": "SSG stated it would improve processes and controls, update SOPs and instructions to its service provider, recover wrongly disbursed grants, and develop a new system integrated with other SSG grant systems to manage disallowed funding cases.",
+    "evidence": [
+      {
+        "pdf_page": 52,
+        "quote": "AGO found that SSG had disbursed a total of $269,100 in grants and SkillsFuture Credit (SFC) for 295 individuals and three companies which were disallowed funding or use of SFC by SSG.",
+        "printed_page": "41",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 52,
+        "quote": "According to SSG, the errors were mainly due to IT system errors and limitations in manual checks by its service provider.",
+        "printed_page": "41",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2021_22-05",
+    "report_id": "fy2021_22",
+    "fiscal_year": "FY2021/22",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Lapses in Management of Grants",
+    "ministry": "Ministry of Education",
+    "entity": "SkillsFuture Singapore Agency",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "System business rules were not well-defined or correctly configured to detect or prevent grant disbursements for individuals with overlapping course attendance timing.",
+    "key_facts": [
+      "5,887 enrolments where individuals attended two or more synchronous course sessions at the same time",
+      "$3.29 million in grants disbursed for 4,904 of these enrolments",
+      "4,719 enrolments required physical presence at different venues simultaneously",
+      "At least $13,300 in grant overpayments confirmed for recovery across 38 enrolments"
+    ],
+    "root_cause": "SSG’s business rules were not well-defined or correctly configured in certain scenarios, such as individuals attending multiple courses with overlaps in attendance timing.",
+    "risk_impact": "Grants were disbursed for overlapping course attendance where physical attendance at multiple locations simultaneously was impossible, creating a risk of error, overpayment, or abuse.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Actual wrong disbursements occurred, totaling $3.29 million across 4,904 enrolments with overlapping attendance timings.",
+    "criteria_breached": [],
+    "management_response": "SSG agreed to regularise business rules to ensure consistency and robustness, investigate and pursue recovery actions for enrolments requiring physical presence, and implement a tighter e-attendance system.",
+    "evidence": [
+      {
+        "pdf_page": 50,
+        "quote": "SSG also noted from the AGO audit that SSG’s business rules were not well-defined or correctly configured in certain scenarios, such as individuals attending multiple courses with overlaps in attendance timing, and disbursements made to individuals and companies that were disallowed funding.",
+        "printed_page": "39",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 52,
+        "quote": "AGO’s data analysis on attendance records found 5,887 enrolments where the individual enrolled was found to have attended two or more synchronous course sessions for different courses at the same time.",
+        "printed_page": "41",
+        "match_score": 99.5,
+        "verified": true
+      }
+    ],
+    "id": "fy2021_22-06",
+    "report_id": "fy2021_22",
+    "fiscal_year": "FY2021/22",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Improve Controls over Payments",
+    "ministry": "Ministry of Health",
+    "entity": "Health Promotion Board",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [
+      "Account provisioning and removal",
+      "Change management"
+    ],
+    "issue_summary": "System issues in HPB's new human resource system, alongside errors during the migration of termination records and delays in keying in termination dates, resulted in widespread salary overpayments to terminated personnel.",
+    "key_facts": [
+      "51 terminated personnel received salary payments for 1 to 6 months after contract termination, totaling $0.58 million in overpayments in AGO's sample.",
+      "HPB's internal review identified 868 total overpayment cases amounting to $1.60 million.",
+      "211 cases totaling $0.48 million remained outstanding at the time of the audit."
+    ],
+    "root_cause": "Overpayments were mainly due to delays in keying in termination dates in the human resource system, errors encountered during the migration of termination records to a new system, and system issues in the new system.",
+    "risk_impact": "HPB incurred significant financial overpayments and faced delays and recovery risks in recovering public funds from terminated staff.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments actually resulted from the system issues and record migration errors, totaling $0.58 million in AGO's sample and $1.60 million overall.",
+    "criteria_breached": [],
+    "management_response": "HPB resolved the system issues, conducted a review identifying 868 overpayment cases, recovered $0.88 million, placed 54 cases on repayment plans, and enhanced supervisory oversight of HR operational processes.",
+    "evidence": [
+      {
+        "pdf_page": 72,
+        "quote": "AGO’s data analysis of payments made to swab personnel found that 51 personnel continued to receive payments for one to six months after their contracts had terminated.",
+        "printed_page": "60",
+        "match_score": 99.4,
+        "verified": true
+      },
+      {
+        "pdf_page": 73,
+        "quote": "HPB explained that the overpayments were mainly due to delays in the keying in of termination dates in the human resource system and errors encountered during the migration of termination records to a new system.",
+        "printed_page": "61",
+        "match_score": 97.2,
+        "verified": true
+      },
+      {
+        "pdf_page": 73,
+        "quote": "There were also a number of system issues in the new system which had since been resolved.",
+        "printed_page": "61",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2021_22-07",
+    "report_id": "fy2021_22",
+    "fiscal_year": "FY2021/22",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Ensure Timely Deactivation of Accounts of Terminated Personnel",
+    "ministry": "Ministry of Health",
+    "entity": "Health Promotion Board",
+    "system": null,
+    "audit_type": "IT general controls",
+    "control_domain": "Account provisioning and removal",
+    "secondary_domains": [],
+    "issue_summary": "HPB delayed the deactivation of 11 terminated swab personnel's accounts in the payment system by four months to a year, exposing the agency to the risk of erroneous payments.",
+    "key_facts": [
+      "Delays of four months to a year in account deactivation for 11 out of 13 terminated Contract for Service swab personnel test-checked."
+    ],
+    "root_cause": "Staff in charge of administering the accounts were unfamiliar with the deactivation of accounts as the payment system was new.",
+    "risk_impact": "Payments could still be made to personnel with active accounts, exposing HPB to the risk of erroneous payments.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "The control gap created a realistic risk of erroneous payments, but AGO's test checks found no evidence that overpayments resulted from these 11 active accounts.",
+    "criteria_breached": [],
+    "management_response": "HPB explained that staff were unfamiliar with account deactivation as the system was new, noted that three levels of supervisory checks were in place for payments, and committed to updating its SOPs.",
+    "evidence": [
+      {
+        "pdf_page": 73,
+        "quote": "From test checks of 13 CFS swab personnel whose contracts were terminated during the audit period, AGO noted delays of between four months and a year in the deactivation of 11 swab personnel’s accounts in the payment system.",
+        "printed_page": "61",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 73,
+        "quote": "Delays in deactivating these accounts could expose HPB to the risk of erroneous payments.",
+        "printed_page": "61",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 73,
+        "quote": "HPB explained that the staff who were in charge of administering the accounts were unfamiliar with the deactivation of accounts as the system was new.",
+        "printed_page": "61",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2021_22-08",
+    "report_id": "fy2021_22",
+    "fiscal_year": "FY2021/22",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Incorrect Contributions to SAVER-Premium Fund Accounts",
+    "ministry": "Ministry of Defence",
+    "entity": "SAVER-Premium Fund",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [
+      "Change management"
+    ],
+    "issue_summary": "System misconfigurations following a policy change led to incorrect contributions to servicemen's SAVER accounts that went undetected by MINDEF's initial internal checks.",
+    "key_facts": [
+      "AGO's test checks for 1 April 2019 to 31 March 2022 initially found 4 instances of incorrect contributions totaling $687 ($405 over-contributions to CPFTUA of 2 servicemen and $282 to RA of 2 servicemen).",
+      "Following AGO's audit, MINDEF uncovered an additional 360 cases of over-contributions to servicemen's CPFTUA amounting to $164,200.",
+      "MINDEF also identified 853 cases of incorrect contributions to servicemen's RA, comprising 809 over-contributions ($90,800) and 44 under-contributions ($9,400)."
+    ],
+    "root_cause": "MINDEF explained that the errors arose from system misconfigurations following a policy change to the SAVER and Premium Plans in July 2021.",
+    "risk_impact": "Servicemen received incorrect contribution amounts in their retirement and CPF top-up accounts, with a risk of other undetected erroneous transactions.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments and contributions actually resulted, affecting over 1,200 accounts with erroneous financial contributions totaling more than $255,000.",
+    "criteria_breached": [],
+    "management_response": "MINDEF took follow-up action to rectify all incorrect contributions, confirmed there were no other errors arising from the misconfigurations, and developed a checklist to ensure rectifications are comprehensive.",
+    "evidence": [
+      {
+        "pdf_page": 30,
+        "quote": "MINDEF explained that the errors arose from system misconfigurations following a policy change to the SAVER and Premium Plans in July 2021.",
+        "printed_page": "20",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 30,
+        "quote": "Following AGO’s audit, MINDEF found an additional 360 cases of over-contributions to servicemen’s CPFTUA (amounting to $164,200), and another 853 cases of incorrect contributions to servicemen’s RA.",
+        "printed_page": "20",
+        "match_score": 99.5,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-01",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weak Controls over the Most Privileged Operating System and Database Accounts",
+    "ministry": "Prime Minister’s Office",
+    "entity": "Public Service Division",
+    "system": "HRP",
+    "audit_type": "IT general controls",
+    "control_domain": "Privileged access management",
+    "secondary_domains": [
+      "Security configuration and settings"
+    ],
+    "issue_summary": "Security software on 8 HRP application and database servers was misconfigured, allowing 17 OS administrators to execute any command with 'root' privileges while executing 5 authorised commands.",
+    "key_facts": [
+      "17 IT vendor staff performed the role of OS administrator of HRP.",
+      "Security software was misconfigured across all 8 sampled HRP application and database servers.",
+      "The misconfiguration enabled OS administrators to run any command with root privileges while executing 5 authorized commands."
+    ],
+    "root_cause": null,
+    "risk_impact": "Any unauthorised activity carried out using 'root' privileges could compromise HRP application and database servers and affect system availability.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "A control gap created a realistic risk of unrestricted root access across multiple servers, but retrospective reviews found no evidence of unauthorised activities.",
+    "criteria_breached": [
+      "Government Technology Agency (GovTech)'s advisory dated 1 June 2020"
+    ],
+    "management_response": "PSD remediated the configuration in the security software across all applicable HRP servers, performed retrospective log reviews for December 2022 to March 2023 with no unauthorized activities found, and targeted completion of retrospective reviews for April to November 2022 by end-June 2023.",
+    "evidence": [
+      {
+        "pdf_page": 32,
+        "quote": "The most privileged OS user account had full access privileges to make changes to the OS audit logs, OS user access rights and OS security settings.",
+        "printed_page": "22",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 32,
+        "quote": "The security software was misconfigured in all 8 application and database servers, such that the 17 OS administrators could execute any command with the privileges of the “root” account while executing 5 of the authorised commands.",
+        "printed_page": "22",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-02",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weak Controls over the Most Privileged Operating System and Database Accounts",
+    "ministry": "Prime Minister’s Office",
+    "entity": "Public Service Division",
+    "system": "HRP",
+    "audit_type": "IT general controls",
+    "control_domain": "Privileged access management",
+    "secondary_domains": [
+      "Security configuration and settings"
+    ],
+    "issue_summary": "The most privileged database account was kept active and used for routine monitoring rather than emergency tasks, and was not configured to lock out after consecutive failed login attempts.",
+    "key_facts": [
+      "The most privileged DB account in 1 DB component was activated and last used on 31 October 2022 to perform general system monitoring.",
+      "The account had full access privileges to create and delete databases or users, change configuration files, and perform data backups.",
+      "The account was not configured to disable after consecutive failed login attempts."
+    ],
+    "root_cause": null,
+    "risk_impact": "Using the privileged DB account for routine functions increased the risk of unintended database changes, and the lack of account lockout exposed it to brute force password attacks.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "The failure to deactivate a powerful database account and lack of account lockout controls created a realistic risk of compromise, but no actual unauthorized access was reported.",
+    "criteria_breached": [
+      "HRP Guidelines",
+      "Government Instruction Manual on ICT and Smart Systems Management"
+    ],
+    "management_response": "PSD deactivated the most privileged DB account in the DB component and configured it to disable after a certain number of consecutive failed login attempts.",
+    "evidence": [
+      {
+        "pdf_page": 32,
+        "quote": "AGO test-checked 2 database (DB) components in the HRP DB in November 2022, and found that the most privileged DB account in 1 of the DB components was activated and last used on 31 October 2022 to perform general system monitoring.",
+        "printed_page": "22",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 33,
+        "quote": "AGO further noted that the most privileged DB account was not configured to be disabled after multiple consecutive failed login attempts.",
+        "printed_page": "23",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-03",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Review of Accounts and Administrators’ Activities in IT System",
+    "ministry": "Prime Minister’s Office",
+    "entity": "Public Service Division",
+    "system": "HRP",
+    "audit_type": "IT general controls",
+    "control_domain": "Periodic access review",
+    "secondary_domains": [
+      "Privileged access management",
+      "Account provisioning and removal"
+    ],
+    "issue_summary": "Monthly and quarterly reviews of user, privileged, and service accounts across HRP servers, database, and applications were either omitted entirely or performed ineffectively on incomplete lists of accounts.",
+    "key_facts": [
+      "Monthly reviews were not conducted on privileged accounts for HRP applications.",
+      "Three monthly reviews of HRP server accounts reviewed less than 14% of server accounts.",
+      "One monthly review of privileged/service accounts for the HRP database reviewed less than 4% of DB accounts.",
+      "Quarterly reviews of user accounts and access rights for HRP servers, database, and applications were not conducted."
+    ],
+    "root_cause": "PSD informed AGO that its IT vendor had encountered difficulties in manually collating the large number of accounts for timely review.",
+    "risk_impact": "PSD was at risk of failing to identify unauthorised, obsolete, or unused privileged accounts which could be exploited to disrupt HRP operations.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Significant gaps existed in user and privileged access reviews across servers, databases, and applications, but no unauthorised accounts or exploitation were reported.",
+    "criteria_breached": [
+      "Government Instruction Manual on ICT and Smart Systems Management",
+      "HRP Guidelines"
+    ],
+    "management_response": "PSD automated the process to generate HRP accounts for review and instituted monthly tracking and reporting to the PSD Director (IT) starting May 2023.",
+    "evidence": [
+      {
+        "pdf_page": 33,
+        "quote": "AGO test-checked the monthly and quarterly reviews of both privileged and service accounts for 8 HRP servers, 1 database and 2 applications for the period May 2022 to November 2022.",
+        "printed_page": "23",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 33,
+        "quote": "Less than 14% of the HRP server accounts and 4% of HRP database accounts were reviewed.",
+        "printed_page": "23",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 34,
+        "quote": "Quarterly reviews of user accounts and access rights for the HRP servers, database and applications had not been conducted.",
+        "printed_page": "24",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-04",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Review of Accounts and Administrators’ Activities in IT System",
+    "ministry": "Prime Minister’s Office",
+    "entity": "Public Service Division",
+    "system": "HRP",
+    "audit_type": "IT general controls",
+    "control_domain": "Logging and monitoring of activities",
+    "secondary_domains": [
+      "Privileged access management"
+    ],
+    "issue_summary": "Reviews of OS and DB administrator activities were missing for certain servers and periods due to technical issues, and the reviews conducted were ineffective due to incomplete logs and lack of anomaly verification.",
+    "key_facts": [
+      "OS administrator activity logs for 4 HRP application servers were not generated or reviewed due to activities not being sent to the SIEM tool.",
+      "DB administrator activities were not reviewed for 6 out of 10 months checked.",
+      "Conducted OS activity reviews omitted details (nature, who, when) and failed to capture defined criteria such as audit log clearance and security setting circumvention.",
+      "There was no assessment or follow-up documentation on potential anomalies, nor documentary evidence that DB administrator activities were verified as authorised."
+    ],
+    "root_cause": "Due to a technical issue, the administrators’ activities had not been sent to the SIEM tool.",
+    "risk_impact": "Without effective activity reviews, PSD was unable to detect whether any unauthorised activity by system administrators had taken place.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Detective monitoring controls over privileged activity were incomplete or missing over multiple months, creating a substantial risk of undetected misuse, though no actual unauthorized activity was identified.",
+    "criteria_breached": [],
+    "management_response": "PSD rectified the technical logging issue in February 2023, incorporated regular checks, reported monthly review status to PSD Director (IT) from May 2023, planned a feasibility study on using GovTech's Central Service, and committed to consult GovTech to prioritise log reviews by end July 2023.",
+    "evidence": [
+      {
+        "pdf_page": 34,
+        "quote": "There was no review performed on the OS administrators’ activities for 4 HRP application servers.",
+        "printed_page": "24",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 34,
+        "quote": "The activities of the DB administrators performed in the HRP DB were also not reviewed for 6 out of 10 months test-checked.",
+        "printed_page": "24",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 35,
+        "quote": "Without effective reviews of the activities performed by administrators, PSD would not be able to detect whether any unauthorised activity had taken place.",
+        "printed_page": "25",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-05",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Excessive Access Rights Granted to Encryption/Decryption Keys and Data Files",
+    "ministry": "Prime Minister’s Office",
+    "entity": "Public Service Division",
+    "system": "HRP",
+    "audit_type": "IT general controls",
+    "control_domain": "Data protection and encryption",
+    "secondary_domains": [
+      "Excessive access and segregation of duties"
+    ],
+    "issue_summary": "Twelve IT vendor staff accounts and a system group were granted excessive access permissions to sensitive external data transfer files and their encryption/decryption keys.",
+    "key_facts": [
+      "Full access rights were granted to 12 vendor accounts to read, create, modify, and delete data files (e.g. salary and allowance bank payment files) in File Transfer servers.",
+      "The same 12 accounts held excessive access rights to encryption/decryption keys for data files exchanged with external systems.",
+      "A system group of users with FT server access was also granted excessive access rights to encryption/decryption keys, enabling modification or deletion of keys."
+    ],
+    "root_cause": "PSD explained that during the stabilisation period for HRP, there were several issues with the data files transfer service, and IT vendor staff were granted full access rights to resolve issues expeditiously.",
+    "risk_impact": "Vendor staff could read, create, modify, or delete sensitive payment data files, or alter encryption/decryption keys, disrupting file exchange processes.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Excessive access to sensitive payment files and cryptographic keys posed a realistic risk of unauthorised data manipulation or exposure, though no exploitation was identified.",
+    "criteria_breached": [],
+    "management_response": "PSD acknowledged the need for clearer segregation of duties, committed to redesign access rights, and planned to test and implement the revised access model in production by June 2023.",
+    "evidence": [
+      {
+        "pdf_page": 36,
+        "quote": "Full access rights were granted to 12 accounts belonging to IT vendor staff, which exceeded what their roles required.",
+        "printed_page": "26",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 36,
+        "quote": "The same 12 accounts were also granted excessive access rights to the keys used for encryption/decryption of data files exchanged between HRP and external systems/agencies.",
+        "printed_page": "26",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-06",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Management of Accounts in IT Systems",
+    "ministry": "Ministry of Culture, Community and Youth",
+    "entity": "People's Association",
+    "system": "Volunteer Management System, Grassroots E-Mart System II, Grassroots Financial Accounting System",
+    "audit_type": "IT general controls",
+    "control_domain": "Account provisioning and removal",
+    "secondary_domains": [
+      "Logging and monitoring of activities"
+    ],
+    "issue_summary": "PA failed to promptly deactivate or remove user accounts in VMS, GEMS II, and G-FAST for staff and grassroots leaders who had left service or stepped down, resulting in unauthorised system logins and payment transactions post-exit.",
+    "key_facts": [
+      "1,801 user accounts were not deactivated after users left service or stepped down.",
+      "1,444 user accounts were deactivated late, with delays between 1 and 643 days.",
+      "Delays in deactivation for non-deactivated accounts ranged from 5 to 1,427 days (about 3 years and 11 months).",
+      "16 user accounts were used to log into VMS and G-FAST after users' last day of service.",
+      "1 user account was used to create 6 payment transactions totaling $624.85 in G-FAST after user's last day of service.",
+      "Audit logs of VMS were not available for AGO's audit."
+    ],
+    "root_cause": null,
+    "risk_impact": "Delays in deactivating or not deactivating unneeded accounts increase the risk of unauthorised access, which could lead to unauthorised changes to GRLs' records or unauthorised approvals of procurement and payments.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Unauthorised access and activity actually occurred, where 16 user accounts logged in post-exit and 1 account was used to create 6 payment transactions totaling $624.85.",
+    "criteria_breached": [
+      "Government Instruction Manual on ICT and Smart Systems Management"
+    ],
+    "management_response": "PA acknowledged the observations and stated it would replace VMS with GRL@PA in August 2023, tap on the Whole-of-Government Central Account Management interface with HR to automate account deactivation, strengthen GEMS II controls, and enforce strict laptop returns on the last day of service.",
+    "evidence": [
+      {
+        "pdf_page": 49,
+        "quote": "AGO’s test checks of user accounts in VMS, GEMS II and G-FAST found weaknesses in the management of user accounts in all 3 systems.",
+        "printed_page": "38",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 49,
+        "quote": "In particular, 16 of those user accounts had been used to log into VMS and G-FAST after the users’ last day of service.",
+        "printed_page": "38",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 49,
+        "quote": "AGO’s review of the audit logs of G-FAST showed that 1 user account had been used to create a total of 6 payment transactions amounting to $624.85 after the user’s last day of service.",
+        "printed_page": "38",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-07",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Jobs Support Scheme",
+    "ministry": "Ministry of Finance",
+    "entity": "Inland Revenue Authority of Singapore",
+    "system": null,
+    "audit_type": "IT general controls",
+    "control_domain": "Change management",
+    "secondary_domains": [
+      "Other IT control"
+    ],
+    "issue_summary": "IRAS lacked proper version change control mechanisms for the automated scripts used to perform anti-gaming checks across JSS tranches, as well as better documentation on the assessment and approval of tested risk scenarios.",
+    "key_facts": [
+      "Anti-gaming scripts were updated for each JSS tranche as risk scenarios were refined.",
+      "Total JSS disbursements subject to anti-gaming checks amounted to $29.38 billion."
+    ],
+    "root_cause": null,
+    "risk_impact": "Lack of version control over anti-gaming scripts creates a risk of unapproved changes or omissions, potentially causing failures to flag gaming cases for follow-up.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Inadequate version change control over automated scripts creates a realistic risk of unmonitored script modifications, but with no evidence that fraudulent gaming was missed as a result.",
+    "criteria_breached": [],
+    "management_response": "IRAS informed AGO that it would seek to improve its anti-gaming checks for future schemes, including better documentation and maintaining version change control mechanisms for the scripts used for the identification of potential gaming cases.",
+    "evidence": [
+      {
+        "pdf_page": 80,
+        "quote": "AGO’s review found a few areas of improvement relating to IRAS’ anti-gaming checks, such as the need for proper version change control mechanisms for the anti-gaming scripts used and better documentation of the assessment and approval of the risk scenarios being tested.",
+        "printed_page": "68",
+        "match_score": 99.6,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-08",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Jobs Support Scheme",
+    "ministry": "Ministry of Finance",
+    "entity": "Inland Revenue Authority of Singapore",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "A system limitation prevented IRAS from blocking JSS payouts to entities that had voluntarily declined payouts, resulting in automated payouts being processed for entities that should have been blocked.",
+    "key_facts": [
+      "Payouts for 116 entities totalling $0.14 million were processed across 3 JSS tranches despite being supposed to be blocked.",
+      "Initial test checks on 15 entities that voluntarily declined JSS revealed 1 case processed due to system limitation."
+    ],
+    "root_cause": "System limitation in blocking the payout.",
+    "risk_impact": "Disbursement of grant payouts to entities that had voluntarily declined or were flagged to be blocked.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Actual wrong payments occurred as a direct result of the system control failure ($0.14 million disbursed to 116 entities that were supposed to be blocked).",
+    "criteria_breached": [],
+    "management_response": "IRAS informed AGO that it would be performing further checks to ascertain whether there were other cases that were not properly blocked and would take action to recover erroneous payouts, if any.",
+    "evidence": [
+      {
+        "pdf_page": 80,
+        "quote": "AGO’s test checks on 15 entities that had voluntarily declined receiving JSS, found 1 case where a subsequent payout was still processed due to a system limitation in blocking the payout.",
+        "printed_page": "68",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-09",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Rental Cash Grant/Rental Support Scheme",
+    "ministry": "Ministry of Finance",
+    "entity": "Inland Revenue Authority of Singapore",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "System rules for automatic grant allotments were configured to assess revenue eligibility based only on the relevant year even when an entity operated for less than 12 months, contrary to legislation and implementation requirements.",
+    "key_facts": [
+      "2,237 grant allotments totalling $23.25 million for 958 entities had revenue eligibility assessed incorrectly due to system rule configuration.",
+      "A total of $3.55 million was disbursed to 12 ineligible entities as a result of the system rule misconfiguration."
+    ],
+    "root_cause": "Due to the concurrent implementation of many work streams, system rules were developed based on MOF’s policy intent and approved parameters before the legislation/RSS implementation requirements were finalised.",
+    "risk_impact": "Automated disbursement of rental grants to ineligible entities.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Actual wrong payments occurred as a direct result of the system rule misconfiguration ($3.55 million disbursed to 12 ineligible entities).",
+    "criteria_breached": [
+      "COVID-19 (Temporary Measures) (Rental and Related Measures) Regulations 2020",
+      "Rental Support Scheme Implementation Document"
+    ],
+    "management_response": "IRAS also shared that most of the grants disbursed to the 12 ineligible entities had already been returned to IRAS. For the remaining grants, MOF and IRAS had made a considered decision that no recovery was necessary.",
+    "evidence": [
+      {
+        "pdf_page": 85,
+        "quote": "Due to the configuration of system rules for automatic grant allotments, the revenue eligibility of the entities was only assessed based on the relevant year even for cases where there were less than 12 months of revenue in that year.",
+        "printed_page": "73",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-10",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Rental Cash Grant/Rental Support Scheme",
+    "ministry": "Ministry of Finance",
+    "entity": "Inland Revenue Authority of Singapore",
+    "system": null,
+    "audit_type": "IT general controls",
+    "control_domain": "Account provisioning and removal",
+    "secondary_domains": [
+      "Security configuration and settings"
+    ],
+    "issue_summary": "Access rights granted to user accounts in the system used to process manual RCG/RSS grant applications were not properly supported by requests from officers-in-charge or lacked documentation specifying the required access scope.",
+    "key_facts": [
+      "136 out of 222 user accounts (61%) examined were not properly supported by requests from relevant officers-in-charge.",
+      "For 27 accounts, no supporting documentation was provided.",
+      "For 109 accounts, deployment emails provided did not specify the access rights to be granted."
+    ],
+    "root_cause": "IRAS explained that there were instances where the access rights were requested verbally or through other communication modes for quick execution.",
+    "risk_impact": "Increased risk of unauthorised access and unauthorized changes to sensitive entity information such as revenue and tenancy details.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "A majority of sampled system user accounts (61%) were provisioned without proper authorization or specified access scope, creating a realistic risk of unauthorized data access.",
+    "criteria_breached": [
+      "IRAS IT policy"
+    ],
+    "management_response": "IRAS recognised the importance of controls over access rights, and would ensure compliance and proper documentation for future schemes.",
+    "evidence": [
+      {
+        "pdf_page": 87,
+        "quote": "AGO’s review of 222 user accounts in the system used by IRAS to process manual grant applications found that the access rights granted to 136 accounts (or 61%) were not properly supported by requests from the relevant officers-in-charge.",
+        "printed_page": "75",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-11",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "SingapoRediscovers Vouchers Scheme",
+    "ministry": "Ministry of Trade and Industry",
+    "entity": "Singapore Tourism Board",
+    "system": null,
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "No automated system validation checks were implemented in the SRV redemption system to check the age or validity of declared children/youths claiming ticket subsidies.",
+    "key_facts": [
+      "5,718 Singapore Citizens made redemptions with subsidies totalling $117,200 for 6,506 ineligible persons who were not below 18 years.",
+      "Redemptions included 10 persons with invalid identification numbers.",
+      "4,466 of the 6,506 ineligible persons had also made adult SRV redemptions."
+    ],
+    "root_cause": "STB explained that due to the short lead time to implement the entire SRV redemption system, no system checks were put in place to validate the age of declared children/youths.",
+    "risk_impact": "Disbursement of Government subsidies to ineligible persons making false declarations.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Actual improper disbursements occurred due to the total absence of automated system validation checks ($117,200 in subsidies disbursed for 6,506 ineligible persons).",
+    "criteria_breached": [],
+    "management_response": "STB would consider the feasibility of ascertaining the identities of children/youths and their familial relationships, should there be such a requirement for future schemes.",
+    "evidence": [
+      {
+        "pdf_page": 93,
+        "quote": "STB explained that due to the short lead time to implement the entire SRV redemption system, no system checks were put in place to validate the age of declared children/youths.",
+        "printed_page": "81",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-12",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "SingapoRediscovers Vouchers Scheme",
+    "ministry": "Ministry of Trade and Industry",
+    "entity": "Singapore Tourism Board",
+    "system": null,
+    "audit_type": "IT general controls",
+    "control_domain": "Account provisioning and removal",
+    "secondary_domains": [],
+    "issue_summary": "There was no documentary evidence of approval for granting user access rights to officers with read and write access to intranet pages where merchant and product whitelists were maintained.",
+    "key_facts": [
+      "28 STB officers were granted read and write access to the merchant whitelist without documented approval.",
+      "655 STB officers were granted read and write access to the product whitelist without documented approval."
+    ],
+    "root_cause": "According to STB, the creators of the intranet pages decided who should have access to the pages but there was no documentation on the approval.",
+    "risk_impact": "Risk of unapproved user access and unauthorized modifications to critical whitelists used during payment reconciliation.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "User access with write privileges to critical whitelist data was granted without documented approvals across hundreds of users, posing a realistic risk of unauthorised data alteration.",
+    "criteria_breached": [],
+    "management_response": "STB informed AGO that for future grant schemes which entail the use of its intranet pages or other similar collaborative platforms, STB would conduct monthly reviews of access rights and regular reviews of activity logs on changes made.",
+    "evidence": [
+      {
+        "pdf_page": 96,
+        "quote": "According to STB, the creators of the intranet pages decided who should have access to the pages but there was no documentation on the approval.",
+        "printed_page": "84",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-13",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "SingapoRediscovers Vouchers Scheme",
+    "ministry": "Ministry of Trade and Industry",
+    "entity": "Singapore Tourism Board",
+    "system": null,
+    "audit_type": "IT general controls",
+    "control_domain": "Periodic access review",
+    "secondary_domains": [
+      "Excessive access and segregation of duties",
+      "Logging and monitoring of activities"
+    ],
+    "issue_summary": "STB did not perform regular reviews of user access rights or user activities on intranet pages containing merchant and product whitelists, resulting in excessive write access granted to all staff regardless of job role.",
+    "key_facts": [
+      "All 655 STB staff were given read and write access to the product whitelist.",
+      "Staff in unrelated job roles (e.g. Human Resource) possessed write access to product whitelists.",
+      "No regular reviews of user access rights or user activities were performed."
+    ],
+    "root_cause": null,
+    "risk_impact": "Excessive write access granted beyond operational needs increases the risk of undetected unauthorized modifications to whitelists.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Organization-wide write access to a critical whitelist without periodic access reviews creates a realistic risk of unauthorized data changes.",
+    "criteria_breached": [],
+    "management_response": "STB informed AGO that for future grant schemes which entail the use of its intranet pages or other similar collaborative platforms, STB would conduct monthly reviews of access rights and regular reviews of activity logs on changes made.",
+    "evidence": [
+      {
+        "pdf_page": 96,
+        "quote": "AGO also noted that there were no regular reviews of user access rights nor of the activities performed by users in the intranet pages where the merchant and product whitelists were maintained.",
+        "printed_page": "84",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-14",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "SingapoRediscovers Vouchers Scheme",
+    "ministry": "Ministry of Trade and Industry",
+    "entity": "Singapore Tourism Board",
+    "system": "STAN Database (DB)",
+    "audit_type": "IT general controls",
+    "control_domain": "Privileged access management",
+    "secondary_domains": [
+      "Account provisioning and removal",
+      "Excessive access and segregation of duties"
+    ],
+    "issue_summary": "The most privileged database account on the STAN DB was shared by 5 IT vendor administrators and accessed by non-DB administrators, preventing individual accountability and violating least privilege principles.",
+    "key_facts": [
+      "1 most privileged DB account was shared among 5 IT vendor DB administrators.",
+      "The privileged account was accessed numerous times by non-DB administrators who did not require such access.",
+      "The 5 DB administrators performed distinct functions and did not require full privileged access."
+    ],
+    "root_cause": null,
+    "risk_impact": "Loss of audit trail and individual accountability for database administration activities (e.g. modifying or deleting SRV data), along with excessive privileges granted to unauthorized users.",
+    "cia_impact": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "A shared privileged administrator account was used without individual accountability across vendor personnel, posing a realistic security risk without evidence of malicious exploitation.",
+    "criteria_breached": [
+      "Government Instruction Manual on ICT and Smart Systems Management",
+      "STB's Standard Operating Procedures"
+    ],
+    "management_response": "For the most privileged DB account, it had since instructed the IT vendor managing STAN DB to restrict access to that account strictly. STB would create individual DB accounts assigned with the system privileges required for each DB administrator to perform his duties.",
+    "evidence": [
+      {
+        "pdf_page": 97,
+        "quote": "AGO found that the most privileged DB account was shared by 5 DB administrators, all of whom were IT vendor personnel.",
+        "printed_page": "85",
+        "match_score": 98.3,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-15",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "SingapoRediscovers Vouchers Scheme",
+    "ministry": "Ministry of Trade and Industry",
+    "entity": "Singapore Tourism Board",
+    "system": "STAN",
+    "audit_type": "IT general controls",
+    "control_domain": "Security configuration and settings",
+    "secondary_domains": [
+      "Privileged access management"
+    ],
+    "issue_summary": "Misconfigurations in OS security software allowed 8 OS accounts used by 2 IT vendor OS administrators to execute all commands using the root user account without restrictive controls or prior risk assessment since system setup in 2017.",
+    "key_facts": [
+      "8 OS accounts used by 2 vendor OS administrators had full root command execution privileges.",
+      "Configurations remained unreviewed since initial system setup in 2017.",
+      "No risk assessment was performed before granting full root command privileges."
+    ],
+    "root_cause": null,
+    "risk_impact": "Increased risk of unauthorised administrative actions, such as altering configuration files, modifying OS audit logs and security settings, or shutting down servers and databases.",
+    "cia_impact": [
+      "Integrity",
+      "Availability",
+      "Confidentiality"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Vendor OS administrator accounts possessed excessive root execution privileges due to software misconfigurations since 2017 without prior risk assessment.",
+    "criteria_breached": [
+      "GovTech advisory dated 1 June 2020"
+    ],
+    "management_response": "For the most privileged OS user account, STB had since restricted the commands that could be executed by the IT vendors to perform their jobs.",
+    "evidence": [
+      {
+        "pdf_page": 98,
+        "quote": "AGO’s test checks found misconfigurations in a security software that allowed 8 operating system (OS) accounts used by 2 OS administrators, who were IT vendor personnel, to execute all commands using the most privileged OS user account.",
+        "printed_page": "86",
+        "match_score": 99.2,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-16",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "SingapoRediscovers Vouchers Scheme",
+    "ministry": "Ministry of Trade and Industry",
+    "entity": "Singapore Tourism Board",
+    "system": "STAN",
+    "audit_type": "IT general controls",
+    "control_domain": "Periodic access review",
+    "secondary_domains": [
+      "Privileged access management"
+    ],
+    "issue_summary": "Monthly account reviews performed by STB omitted accounts belonging to OS administrators, all DB accounts, and 104 default or non-administrative OS accounts.",
+    "key_facts": [
+      "2 OS administrator accounts and all DB accounts (including 1 DB admin account) were omitted from monthly reviews.",
+      "104 OS accounts (default accounts and non-administrative accounts) were omitted from monthly reviews."
+    ],
+    "root_cause": null,
+    "risk_impact": "Increased risk that unnecessary, excessive, or administrative access rights are not identified and revoked promptly.",
+    "cia_impact": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Periodic access reviews excluded key OS and DB administrative accounts, creating a governance gap in access control oversight.",
+    "criteria_breached": [],
+    "management_response": "Since January 2023, monthly review of OS privileged accounts access rights had been put in place, and the reviews were documented in STB’s central document management system with proper sign-off by authorised STB personnel.",
+    "evidence": [
+      {
+        "pdf_page": 99,
+        "quote": "AGO’s test checks of STB’s monthly reviews of the accounts found that the access rights granted to the 2 OS administrators’ accounts and all DB accounts (including 1 DB administrator account) were not included in the reviews.",
+        "printed_page": "87",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-17",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "SingapoRediscovers Vouchers Scheme",
+    "ministry": "Ministry of Trade and Industry",
+    "entity": "Singapore Tourism Board",
+    "system": "STAN",
+    "audit_type": "IT general controls",
+    "control_domain": "Logging and monitoring of activities",
+    "secondary_domains": [
+      "Privileged access management"
+    ],
+    "issue_summary": "Monthly reviews of privileged OS activities lacked documentary evidence from Dec 2020 to Aug 2021, and quarterly reviews of privileged DB activities failed to cover system administration and data changes.",
+    "key_facts": [
+      "No documentary evidence of monthly OS privileged activity reviews from December 2020 to August 2021 (9 months).",
+      "Quarterly DB privileged activity reviews from December 2020 to January 2022 excluded system administration activities and data modification/deletion."
+    ],
+    "root_cause": null,
+    "risk_impact": "Risk that unauthorized system configuration changes, audit log alterations, or unauthorized database data changes occur without detection.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Privileged activity monitoring was omitted or incomplete (excluding system admin and data changes) for over a year, creating a significant detective control failure.",
+    "criteria_breached": [],
+    "management_response": "Since January 2022, STB had started documenting reviews of the privileged OS activities and follow-up actions taken.",
+    "evidence": [
+      {
+        "pdf_page": 99,
+        "quote": "However, AGO noted that there was no documentary evidence of the monthly reviews/follow-ups performed for the period December 2020 to August 2021.",
+        "printed_page": "87",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2022_23-18",
+    "report_id": "fy2022_23",
+    "fiscal_year": "FY2022/23",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Inadequate Controls over Admissions to ActiveSG Pools and Gyms",
+    "ministry": "Ministry of Culture, Community and Youth",
+    "entity": "Singapore Sports Council (also known as Sport Singapore)",
+    "system": "ActiveSG",
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "The ActiveSG system allowed concurrent or near-simultaneous facility admissions using the same member account pass, enabling members to share non-transferable passes.",
+    "key_facts": [
+      "1,860 admissions to ActiveSG pools and gyms involved shared passes belonging to 339 ActiveSG member accounts",
+      "1,834 admissions involved member accounts being used concurrently at the same or different pools/gyms",
+      "26 admissions involved entry intervals between different sport centres ranging from 3 seconds to 5 minutes"
+    ],
+    "root_cause": "Limitations in the existing ActiveSG system to prevent concurrent or rapid re-entry pass usage.",
+    "risk_impact": "Revenue leakage for SportSG and contravention of ActiveSG terms of use.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Unauthorised access actually occurred, involving 1,860 admissions across 339 accounts.",
+    "criteria_breached": [
+      "ActiveSG terms of use"
+    ],
+    "management_response": "SportSG acknowledged limitations in its existing system and informed AGO that it would put in place safeguards in the new system (MyActiveSG+) to minimise such occurrences.",
+    "evidence": [
+      {
+        "pdf_page": 38,
+        "quote": "From its data analysis and test checks, AGO noted 1,860 admissions to ActiveSG pools and gyms where passes belonging to 339 ActiveSG member accounts were shared.",
+        "printed_page": "27",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 38,
+        "quote": "For 1,834 of the admissions, members had used their passes for entry to an ActiveSG pool/gym while their accounts were concurrently being used for entry at the same or a different pool/gym.",
+        "printed_page": "27",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-01",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Inadequate Controls over Admissions to ActiveSG Pools and Gyms",
+    "ministry": "Ministry of Culture, Community and Youth",
+    "entity": "Singapore Sports Council (also known as Sport Singapore)",
+    "system": "ActiveSG",
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "The ActiveSG system lacked automated validation checks to enforce eligibility criteria, allowing ineligible or unverified members to use discounted or free entry passes.",
+    "key_facts": [
+      "22,618 admissions were made by members using discounted special or per-entry passes for which they were not eligible",
+      "20,582 admissions were made by 2,563 members who abused free admission benefits meant for seniors aged 65 and above"
+    ],
+    "root_cause": "Limitations in the existing ActiveSG system to validate age and member verification status against pass eligibility criteria.",
+    "risk_impact": "Revenue leakage for SportSG due to unauthorized usage of discounted and free admission passes.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Unauthorised access and discounted admissions actually occurred at scale, involving 22,618 admissions.",
+    "criteria_breached": [
+      "ActiveSG terms of use"
+    ],
+    "management_response": "SportSG acknowledged limitations in its existing system and informed AGO that it would put in place safeguards in the new system (MyActiveSG+) to minimise such occurrences.",
+    "evidence": [
+      {
+        "pdf_page": 39,
+        "quote": "AGO noted that 22,618 admissions were made by members using ActiveSG pool/gym special passes or per-entry passes purchased at discounted rates for which they were not eligible.",
+        "printed_page": "28",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 39,
+        "quote": "The majority of those (20,582 admissions) were made by 2,563 members who abused free admission benefits meant for seniors aged 65 and above.",
+        "printed_page": "28",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-02",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Inadequate Controls over Admissions to ActiveSG Pools and Gyms",
+    "ministry": "Ministry of Culture, Community and Youth",
+    "entity": "Singapore Sports Council (also known as Sport Singapore)",
+    "system": "ActiveSG",
+    "audit_type": "IT application controls",
+    "control_domain": "Account provisioning and removal",
+    "secondary_domains": [
+      "Application controls and system validation"
+    ],
+    "issue_summary": "The ActiveSG system lacked automated checks or account deactivation controls for deceased individuals, allowing deceased members' accounts to be used for facility admissions.",
+    "key_facts": [
+      "18 deceased members' accounts were used for 283 admissions to ActiveSG pools and gyms",
+      "Deceased members had passed away for up to 4.8 years before the dates of entry",
+      "1 account was used for 201 admissions after the member's death"
+    ],
+    "root_cause": "Limitations in the existing ActiveSG system to detect and deactivate accounts of deceased members.",
+    "risk_impact": "Unauthorised access to facilities resulting in potential revenue leakage for SportSG.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Unauthorised access actually occurred for 283 admissions using 18 deceased members' accounts over periods up to 4.8 years.",
+    "criteria_breached": [],
+    "management_response": "SportSG acknowledged limitations in its existing system and informed AGO that it would put in place safeguards in the new system (MyActiveSG+) to minimise such occurrences.",
+    "evidence": [
+      {
+        "pdf_page": 39,
+        "quote": "AGO found 18 deceased members' accounts which were used for 283 admissions to ActiveSG pools and gyms.",
+        "printed_page": "28",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 39,
+        "quote": "The late members had passed away for as long as 4.8 years before the dates of entry.",
+        "printed_page": "28",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-03",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Lapses in Grant Evaluation",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Ministry of Social and Family Development",
+    "system": "GPLS system",
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "The GPLS system incorrectly tagged Extended Childcare Leave (ECL) claims, allowing paid leave claims for children aged 13 years who had exceeded the age eligibility criterion.",
+    "key_facts": [
+      "51 cases affected",
+      "Over-disbursements totalling $31,900",
+      "ECL claimed when child was 13 years old"
+    ],
+    "root_cause": "Incorrect tagging of the ECL claim by the system.",
+    "risk_impact": "Grants were over-disbursed to ineligible applicants.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments/approvals actually resulted from the automated check failure, with over-disbursements totalling $31,900 across 51 cases.",
+    "criteria_breached": [],
+    "management_response": "MSF enhanced the GPLS system to address system lapses, commenced recovery actions aimed for completion by December 2024, and planned to build more robust test cases and explore post-reimbursement scans.",
+    "evidence": [
+      {
+        "pdf_page": 76,
+        "quote": "The lapses were due to incorrect tagging of the ECL claim by the system. As a result, there were over-disbursements totalling $31,900.",
+        "printed_page": "64",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-04",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Lapses in Grant Evaluation",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Ministry of Social and Family Development",
+    "system": "GPLS system",
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "System validation checks on the marriage criterion were not performed in the GPLS system due to technical issues in the Family Status Repository, leading to approved claims for ineligible applicants.",
+    "key_facts": [
+      "21 claims approved without meeting marriage criterion",
+      "12 cases confirmed ineligible with $21,700 over-disbursement",
+      "9 cases under follow-up totalling $6,800"
+    ],
+    "root_cause": "Technical issues in MSF's Family Status Repository caused system validation checks on the marriage criterion not to be performed.",
+    "risk_impact": "Over-disbursements of grants to applicants who did not meet the marriage eligibility criterion.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments actually resulted due to disabled system validation, with confirmed over-disbursements of $21,700 across 12 cases.",
+    "criteria_breached": [],
+    "management_response": "MSF will enhance the system to use Government-verified data for marriage by June 2024, commenced recovery actions, and planned to build more robust test cases.",
+    "evidence": [
+      {
+        "pdf_page": 77,
+        "quote": "MSF explained that system validation checks on the marriage criterion were not performed during the period when the 21 cases were processed. That was due to technical issues in its Family Status Repository and MSF had instead relied on declarations of eligibility made by the grant applicants.",
+        "printed_page": "65",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-05",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Lapses in Grant Evaluation",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Ministry of Social and Family Development",
+    "system": "GPLS system",
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "The GPLS system automatically processed grant claims without validating whether declared monthly employer CPF contributions exceeded the statutory contribution cap.",
+    "key_facts": [
+      "11 cases automatically processed",
+      "Declared employer CPF contribution exceeded statutory cap of $1,020",
+      "Estimated over-disbursements of $4,400"
+    ],
+    "root_cause": "Inadequate system validation check on the statutory cap for employer CPF contributions during automated processing.",
+    "risk_impact": "Incorrect computation of grant claims resulting in potential over-disbursements.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments/approvals actually resulted from missing system validation logic, with estimated over-disbursements of $4,400.",
+    "criteria_breached": [
+      "Central Provident Fund Act 1953"
+    ],
+    "management_response": "MSF will enhance the system to cap the declared employer's CPF contribution by June 2024 and commenced recovery actions.",
+    "evidence": [
+      {
+        "pdf_page": 77,
+        "quote": "For those cases, AGO noted that the grant claims were computed based on total income including employer’s CPF contribution. However, the declared employer’s monthly CPF contribution had exceeded the statutory contribution cap of $1,020 for ordinary wages.",
+        "printed_page": "65",
+        "match_score": 99.2,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-06",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in IT Controls",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Ministry of Social and Family Development",
+    "system": "GPLS system",
+    "audit_type": "IT general controls",
+    "control_domain": "Privileged access management",
+    "secondary_domains": [
+      "Security configuration and settings"
+    ],
+    "issue_summary": "MSF lacked detailed assessments and periodic reviews of 'sudo' configurations on GPLS application servers, resulting in an unneeded OS user account with 'root' privileges remaining unremoved.",
+    "key_facts": [
+      "3 application servers",
+      "3 OS user accounts granted root privileges via sudo",
+      "1 redundant account unused since creation in November 2021"
+    ],
+    "root_cause": "Absence of detailed assessment and periodic review of 'sudo' configurations.",
+    "risk_impact": "Unauthorised activity using 'root' privileges could compromise OS audit logs, user access, and security settings, potentially disrupting GPLS server operations.",
+    "cia_impact": [
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "A control gap in privileged OS configuration created a realistic risk of unauthorised access or service disruption, with no evidence of actual exploitation reported.",
+    "criteria_breached": [],
+    "management_response": "MSF implemented sudo restrictions in March 2024 per GovTech's advisory and included all sudo accounts in monthly privileged access reviews.",
+    "evidence": [
+      {
+        "pdf_page": 84,
+        "quote": "AGO reviewed the UNIX Operating System (OS) Security Software (i.e. “sudo”) configurations in the 3 application servers of the GPLS system. AGO found that there was no evidence of detailed assessment performed on privileged access granted to 3 OS user accounts to execute all commands with the privileges of the “root” account.",
+        "printed_page": "72",
+        "match_score": 99.4,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-07",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in IT Controls",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Ministry of Social and Family Development",
+    "system": "GPLS system",
+    "audit_type": "IT application controls",
+    "control_domain": "Privileged access management",
+    "secondary_domains": [
+      "Logging and monitoring of activities"
+    ],
+    "issue_summary": "A privileged account in the GPLS system was shared between users, and monthly activity reviews were ineffective due to log reports lacking necessary details and omitting activities from a critical module.",
+    "key_facts": [
+      "1 privileged account shared between 2 users",
+      "Monthly log reviews from August 2022 to June 2023 were incomplete",
+      "Log reports omitted activities in the 'critical' system module used for modifying system rules"
+    ],
+    "root_cause": "Account sharing and incomplete audit logging design.",
+    "risk_impact": "Privileged activities could not be attributed to specific individuals, increasing the risk that unauthorised system modifications would go undetected.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Shared privileged access and incomplete activity logging created a realistic risk of undetected unauthorised system changes, with no evidence of exploitation reported.",
+    "criteria_breached": [],
+    "management_response": "MSF assigned unique accounts to all privileged holders, enhanced review practices from March 2024, and planned logging upgrades for the critical module by June 2024.",
+    "evidence": [
+      {
+        "pdf_page": 84,
+        "quote": "AGO’s checks on the monthly reviews performed on privileged user activities for the period August 2022 to June 2023 noted the sharing of a privileged account between 2 users.",
+        "printed_page": "72",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-08",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in IT Controls",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Ministry of Social and Family Development",
+    "system": "Baby Bonus Online",
+    "audit_type": "IT application controls",
+    "control_domain": "Excessive access and segregation of duties",
+    "secondary_domains": [
+      "Logging and monitoring of activities",
+      "Periodic access review"
+    ],
+    "issue_summary": "Privileged users in the BBO system were assigned access rights beyond their job requirements, and no reviews of privileged user activities were conducted during the audit period.",
+    "key_facts": [
+      "Audit period April 2021 to June 2023",
+      "No reviews performed on privileged user activities during the audit period",
+      "Excessive rights granted to privileged users"
+    ],
+    "root_cause": "Inadequate access control configuration and lack of periodic activity monitoring procedures.",
+    "risk_impact": "Exposed MSF to the risk of undetected unauthorised access or activities in the BBO system.",
+    "cia_impact": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Excessive privileged access rights and total absence of activity reviews created a realistic risk of undetected system abuse, with no evidence of actual exploitation reported.",
+    "criteria_breached": [],
+    "management_response": "MSF removed excess rights on 14 March 2024, instituted monthly activity reviews from March 2024, and planned annual review enhancements by June 2024.",
+    "evidence": [
+      {
+        "pdf_page": 85,
+        "quote": "AGO noted that the privileged users were granted access rights in excess of what they needed for their job roles, thereby exposing MSF to the risk of unauthorised access and activities.",
+        "printed_page": "73",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-09",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "System Errors Affecting Eligibility Assessment and Subsidy Computation",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Early Childhood Development Agency",
+    "system": "Centre Management System",
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "The CMS system logic failed to flag invalid identity numbers in subsidy applications and contained calculation errors in household income and PCI assessments.",
+    "key_facts": [
+      "824 PCI assessments included 862 family members with invalid identity numbers",
+      "$1.76 million disbursed across affected PCI assessments",
+      "22 cases had income/PCI incorrectly computed leading to $22,900 over-disbursements and $1,300 under-disbursements"
+    ],
+    "root_cause": "System logic to flag invalid identity numbers was not working as intended, alongside system computation errors in PCI assessment routines.",
+    "risk_impact": "Means-tested subsidies were incorrectly calculated or approved without valid eligibility verification, leading to over-disbursements and lack of assurance on disbursement accuracy.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments/approvals actually resulted across a total population of 869 cases, including $22,900 in confirmed over-disbursements and $1.76 million in unverified grant assessments.",
+    "criteria_breached": [],
+    "management_response": "ECDA updated system logic, established that 801 cases were bona fide, planned to onboard HOMES by December 2024, and initiated periodic disbursement data analysis.",
+    "evidence": [
+      {
+        "pdf_page": 93,
+        "quote": "For cases where CMS failed to detect invalid identity numbers of family members that were declared by applicants in the system, the errors arose because the system logic to flag invalid identity numbers was not working as intended.",
+        "printed_page": "81",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-10",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Subsidies Given for Ineligible Children",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Early Childhood Development Agency",
+    "system": "Centre Management System",
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "Automated system checks for child citizenship in CMS were deactivated for nearly two years due to false positives, allowing subsidy applications for non-Singapore Citizen children to be approved.",
+    "key_facts": [
+      "Checks deactivated from June 2020 to April 2022",
+      "8 subsidy applications approved for 6 non-Singapore Citizen children",
+      "$43,500 over-disbursed"
+    ],
+    "root_cause": "System checks on child's citizenship were deactivated due to false positives arising from data limitations.",
+    "risk_impact": "Subsidies were disbursed to ineligible non-citizen children.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Wrong payments actually resulted due to disabled automated system checks, with over-disbursements totaling $43,500.",
+    "criteria_breached": [],
+    "management_response": "ECDA reactivated citizenship checks in April 2022, initiated recovery of over-disbursements, and planned to onboard HOMES by December 2024.",
+    "evidence": [
+      {
+        "pdf_page": 94,
+        "quote": "ECDA informed AGO that the system checks on child’s citizenship were deactivated from June 2020 to April 2022 due to false positives which arose from data limitations.",
+        "printed_page": "82",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-11",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in IT Controls",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Early Childhood Development Agency",
+    "system": "Centre Management System",
+    "audit_type": "IT general controls",
+    "control_domain": "Privileged access management",
+    "secondary_domains": [
+      "Security configuration and settings",
+      "IT vendor oversight"
+    ],
+    "issue_summary": "ECDA failed to perform detailed assessments or reviews of 'sudo' configurations on 4 CMS application servers, leaving 78 OS accounts (74 used by vendor staff) with 'root' privileges and 58 obsolete accounts unremoved.",
+    "key_facts": [
+      "4 CMS application servers",
+      "78 OS user accounts granted root privileges via sudo",
+      "74 accounts used by 19 IT vendor staff",
+      "58 obsolete accounts with root privileges remained in sudo configuration"
+    ],
+    "root_cause": "Lack of detailed assessment and periodic review of 'sudo' configurations.",
+    "risk_impact": "Risk of unauthorised changes to OS audit logs, user access, and security settings, as well as unmonitored vendor elevated access.",
+    "cia_impact": [
+      "Integrity",
+      "Confidentiality",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "A control gap in privileged OS access configuration created a realistic risk of unauthorised access, with no evidence of actual exploitation reported.",
+    "criteria_breached": [
+      "GovTech's advisory dated 1 June 2020",
+      "Government Instruction Manual on ICT & Smart Systems Management"
+    ],
+    "management_response": "ECDA instituted sudo restrictions in January 2024 per GovTech's advisory and included all sudo accounts in monthly privileged access reviews.",
+    "evidence": [
+      {
+        "pdf_page": 104,
+        "quote": "AGO found that there was no evidence of detailed assessment performed on the privileged access granted to 78 OS user accounts which allowed those accounts to execute all commands with the privileges of the “root” account.",
+        "printed_page": "92",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-12",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in IT Controls",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Early Childhood Development Agency",
+    "system": "Centre Management System",
+    "audit_type": "IT application controls",
+    "control_domain": "Logging and monitoring of activities",
+    "secondary_domains": [
+      "Privileged access management"
+    ],
+    "issue_summary": "No reviews of privileged user activities had been conducted since CMS was implemented in April 2019, and ECDA was unable to provide supporting documentation for a sampled privileged activity.",
+    "key_facts": [
+      "No reviews of privileged user activities since system implementation in April 2019 (over 4 years)",
+      "Supporting documentation missing for 1 out of 7 privileged activities tested"
+    ],
+    "root_cause": "Absence of periodic review processes for privileged user logs and missing documentation controls.",
+    "risk_impact": "Exposed ECDA to the risk of failing to detect unauthorised changes to user access or system parameters in CMS.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Complete lack of privileged activity reviews for over four years created a realistic risk of undetected system changes, with no evidence of actual exploitation reported.",
+    "criteria_breached": [],
+    "management_response": "ECDA commenced monthly reviews of CMS privileged user activities in February 2024.",
+    "evidence": [
+      {
+        "pdf_page": 105,
+        "quote": "AGO observed weak controls over the privileged user accounts and activities, such as the absence of reviews conducted on privileged user activities since CMS was implemented in April 2019.",
+        "printed_page": "93",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-13",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in IT Controls",
+    "ministry": "Ministry of Social and Family Development",
+    "entity": "Early Childhood Development Agency",
+    "system": "Centre Management System",
+    "audit_type": "IT application controls",
+    "control_domain": "Account provisioning and removal",
+    "secondary_domains": [
+      "Periodic access review"
+    ],
+    "issue_summary": "ECDA failed to perform complete access reviews for internal users, inadequately followed up on access reviews for external users, and delayed removing 7 CMS accounts.",
+    "key_facts": [
+      "Incomplete review of access rights of internal users",
+      "Inadequate follow-up on external users (preschool operators' HQ/centre users)",
+      "Delays in removing 7 CMS user accounts"
+    ],
+    "root_cause": "Deficiencies in periodic user access review workflows and offboarding procedures.",
+    "risk_impact": "Exposed ECDA to the risk of unremoved obsolete/unauthorised accounts performing unauthorised activities in CMS.",
+    "cia_impact": [
+      "Integrity",
+      "Confidentiality"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Deficiencies in user account removal and access reviews created a realistic risk of unauthorized access, with no evidence of actual exploitation reported.",
+    "criteria_breached": [],
+    "management_response": "ECDA planned to strengthen user access reviews, particularly for external users from preschool operators.",
+    "evidence": [
+      {
+        "pdf_page": 105,
+        "quote": "Those lapses exposed ECDA to the risk of not identifying and removing, on a timely basis, any unauthorised, obsolete or unused account and access rights which could be used to perform unauthorised activities in CMS.",
+        "printed_page": "93",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2023_24-14",
+    "report_id": "fy2023_24",
+    "fiscal_year": "FY2023/24",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Controls over Systems Used for Case Processing",
+    "ministry": "Ministry of Law",
+    "entity": "Insolvency and Public Trustee’s Office",
+    "system": "PTO system, Insolvency Case Management Platform, Corporate Insolvency Management System 2",
+    "audit_type": "IT general controls",
+    "control_domain": "Excessive access and segregation of duties",
+    "secondary_domains": [
+      "Logging and monitoring of activities"
+    ],
+    "issue_summary": "Case officers with read and write access could access information and perform tasks for all case accounts across systems regardless of whether they were assigned to the cases, and IPTO lacked control measures to detect and investigate unauthorized access on a timely basis.",
+    "key_facts": [
+      "Case officers granted read and write access to all case accounts across 3 systems regardless of case assignment",
+      "3 instances identified where a case officer accessed and performed multiple actions on his deceased parents' case accounts without approval or permission"
+    ],
+    "root_cause": "IPTO allowed case officers access to all case accounts' information to facilitate efficient handling of cases.",
+    "risk_impact": "Unauthorised access and activities on case accounts could occur without timely detection and investigation.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "severity": "High",
+    "severity_rationale": "Unauthorised access actually occurred, where a case officer accessed and performed multiple actions on 3 case accounts of his deceased parents without approval or permission.",
+    "criteria_breached": [
+      "Principle of least privilege"
+    ],
+    "management_response": "MinLaw acknowledged that stronger controls were needed to detect unauthorised access. Operational divisions implemented additional audit systems to detect unauthorised access within IT case management systems with effect from April 2025.",
+    "evidence": [
+      {
+        "pdf_page": 32,
+        "quote": "AGO noted that IPTO case officers, with read and write access granted, could access information and perform work tasks for all case accounts in the Public Trustee’s Office (PTO) system, Insolvency Case Management Platform and Corporate Insolvency Management System 2.",
+        "printed_page": "22",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 32,
+        "quote": "In addition, AGO noted that IPTO did not have any control measures in place to detect and investigate possible cases of unauthorised access and activities on a timely basis.",
+        "printed_page": "22",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 32,
+        "quote": "AGO’s data analysis found 3 instances where a PTO case officer had, following the distribution of moneys from his deceased parents’ case accounts, accessed and performed multiple actions on these case accounts in the PTO system.",
+        "printed_page": "22",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2024_25-01",
+    "report_id": "fy2024_25",
+    "fiscal_year": "FY2024/25",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Management of Most Privileged Operating System Account",
+    "ministry": "Ministry of Manpower",
+    "entity": "Ministry of Manpower",
+    "system": "WINS-EP",
+    "audit_type": "IT general controls",
+    "control_domain": "Privileged access management",
+    "secondary_domains": [
+      "Security configuration and settings"
+    ],
+    "issue_summary": "Inappropriate command granted in sudo configurations allowed 24 IT staff and IT vendor staff to change the password of any account, including the root account, across three WINS-EP application and database servers.",
+    "key_facts": [
+      "3 WINS-EP application and database servers affected",
+      "24 MOM IT staff and IT vendor staff granted the inappropriate command"
+    ],
+    "root_cause": null,
+    "risk_impact": "IT staff and vendor staff could gain full access to the root account by changing its password, negating controls put in place to secure the root account.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "A sudo configuration flaw created a risk of unauthorized root account password changes across servers, but MOM established that no unauthorized changes were actually made.",
+    "criteria_breached": [],
+    "management_response": "MOM remediated the sudo configurations for all three servers, updated internal procedures to reinforce password change control measures, and established that no unauthorised changes were made to the root account password.",
+    "evidence": [
+      {
+        "pdf_page": 34,
+        "quote": "AGO reviewed the “sudo” configurations in 3 WINS-EP application and database servers and found that 1 of the commands granted was inappropriate.",
+        "printed_page": "24",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 34,
+        "quote": "This command could be used by 24 MOM IT staff and IT vendor staff to change the password of any account including the “root” account.",
+        "printed_page": "24",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2024_25-02",
+    "report_id": "fy2024_25",
+    "fiscal_year": "FY2024/25",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Management of Most Privileged Operating System Account",
+    "ministry": "Ministry of Manpower",
+    "entity": "Ministry of Manpower",
+    "system": "WINS-EP",
+    "audit_type": "IT general controls",
+    "control_domain": "Security configuration and settings",
+    "secondary_domains": [
+      "Privileged access management"
+    ],
+    "issue_summary": "Security settings in two WINS-EP servers were not configured according to MOM's security guide, allowing OS administrators to access the root account remotely.",
+    "key_facts": [
+      "2 out of 3 WINS-EP application and database servers were not configured according to MOM's security guide"
+    ],
+    "root_cause": "Staff oversight.",
+    "risk_impact": "OS administrators could access the root account remotely, increasing the risk of security exploits targeting the root account and undermining intended safeguards.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Incorrect security settings exposed root access to remote login risks, but there was no evidence of actual exploitation.",
+    "criteria_breached": [
+      "MOM's security guide"
+    ],
+    "management_response": "MOM rectified the security settings to only allow login to the root account through the WINS-EP server console, and enhanced its processes in March 2025 to require an independent verifier to review changes to security settings.",
+    "evidence": [
+      {
+        "pdf_page": 34,
+        "quote": "According to MOM’s security guide, login to the “root” account must only be performed through the WINS-EP server console.",
+        "printed_page": "24",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 34,
+        "quote": "AGO’s checks on the security settings in the 3 WINS-EP application and database servers noted that the settings in 2 out of 3 WINS-EP servers were not configured according to MOM’s security guide.",
+        "printed_page": "24",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2024_25-03",
+    "report_id": "fy2024_25",
+    "fiscal_year": "FY2024/25",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Management of Most Privileged Operating System Account",
+    "ministry": "Ministry of Manpower",
+    "entity": "Ministry of Manpower",
+    "system": "WINS-EP",
+    "audit_type": "IT general controls",
+    "control_domain": "Privileged access management",
+    "secondary_domains": [],
+    "issue_summary": "The root account was inappropriately used for routine operational activities rather than restricted to emergency situations, and the root account password was not changed after each login.",
+    "key_facts": [
+      "Inappropriate root account use noted between March and October 2024",
+      "3 to 6 instances of login to the root account using the same password across 3 WINS-EP servers"
+    ],
+    "root_cause": null,
+    "risk_impact": "Inappropriate use of root account and reusing root passwords increases the risk of unauthorised system changes and security compromise.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Procedural non-compliance in privileged account usage and password resets created operational security risks, but MOM verified actions were non-malicious and caused no security compromise.",
+    "criteria_breached": [
+      "MOM requirement to restrict root account use to emergency situations and change root account password after each login"
+    ],
+    "management_response": "MOM verified that actions performed were not malicious and did not result in security compromise, and conducted a briefing in March 2025 to all IT staff emphasizing restricted root account use and mandatory password changes after each use.",
+    "evidence": [
+      {
+        "pdf_page": 35,
+        "quote": "AGO noted instances between March and October 2024 where the “root” account was inappropriately used.",
+        "printed_page": "25",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 35,
+        "quote": "According to MOM, the “root” account was supposed to be used only in emergency situations.",
+        "printed_page": "25",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2024_25-04",
+    "report_id": "fy2024_25",
+    "fiscal_year": "FY2024/25",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Weaknesses in Management of Most Privileged Operating System Account",
+    "ministry": "Ministry of Manpower",
+    "entity": "Ministry of Manpower",
+    "system": "WINS-EP",
+    "audit_type": "IT general controls",
+    "control_domain": "Logging and monitoring of activities",
+    "secondary_domains": [
+      "Privileged access management"
+    ],
+    "issue_summary": "MOM reviewed only one type of privileged activity for three WINS-EP servers, failing to perform required reviews on other privileged activities such as file editing and privilege escalation attempts.",
+    "key_facts": [
+      "Review period checked was June to October 2024",
+      "Only 1 type of privileged activity was reviewed across 3 servers"
+    ],
+    "root_cause": null,
+    "risk_impact": "MOM would not be able to detect other unauthorised activities performed using the root account.",
+    "cia_impact": [
+      "Confidentiality",
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Incomplete monitoring of privileged root account activities created a risk that unauthorized system modifications could pass undetected.",
+    "criteria_breached": [
+      "MOM standard operating procedures"
+    ],
+    "management_response": "MOM enhanced its review process to include other types of privileged activities.",
+    "evidence": [
+      {
+        "pdf_page": 35,
+        "quote": "AGO test-checked the reviews performed by MOM in the 3 WINS-EP application and database servers for the period June to October 2024 and noted that MOM only reviewed 1 type of privileged activity.",
+        "printed_page": "25",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 35,
+        "quote": "By reviewing only 1 type of privileged activity, MOM would not be able to detect other unauthorised activities performed using the “root” account, if any.",
+        "printed_page": "25",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2024_25-05",
+    "report_id": "fy2024_25",
+    "fiscal_year": "FY2024/25",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Poor Management of PUB Analysers Maintenance Contracts",
+    "ministry": "Ministry of Sustainability and the Environment",
+    "entity": "Public Utilities Board",
+    "system": "PUB Analyser System",
+    "audit_type": "Other technology-related",
+    "control_domain": "Logging and monitoring of activities",
+    "secondary_domains": [],
+    "issue_summary": "The alert system designed to notify PUB when water quality analyser readings reached specified limits was not operational at two plants.",
+    "key_facts": [
+      "The alert system had not been working since 2023 for 1 plant",
+      "The alert system had not been working since November 2024 for another plant"
+    ],
+    "root_cause": "The maintenance of the alert system was not stipulated as a requirement in the contract documents.",
+    "risk_impact": "Cast doubt on whether the intended purpose of PUB's analysers to countercheck water quality readings was met before making payments.",
+    "cia_impact": [
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "A failure of automated alert monitoring that created a realistic operational monitoring risk, with compensating controls mentioned by the agency.",
+    "criteria_breached": [],
+    "management_response": "PUB acknowledged that its maintenance contracts could have been more comprehensive to include maintenance and troubleshooting of data and alert-related systems, and took steps to resolve the issues.",
+    "evidence": [
+      {
+        "pdf_page": 49,
+        "quote": "AGO’s test checks found that the alert system had not been working since 2023 for 1 plant and since November 2024 for another plant.",
+        "printed_page": "38",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 49,
+        "quote": "The maintenance of the alert system was also not stipulated as a requirement in the contract documents.",
+        "printed_page": "38",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2024_25-06",
+    "report_id": "fy2024_25",
+    "fiscal_year": "FY2024/25",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Poor Management of PUB Analysers Maintenance Contracts",
+    "ministry": "Ministry of Sustainability and the Environment",
+    "entity": "Public Utilities Board",
+    "system": "PUB Water Quality Analysers",
+    "audit_type": "Other technology-related",
+    "control_domain": "Other IT control",
+    "secondary_domains": [
+      "Logging and monitoring of activities"
+    ],
+    "issue_summary": "PUB experienced missing or incomplete analyser data across extended periods at two plants and took more than 12 months to rectify the data loss.",
+    "key_facts": [
+      "Analyser data was incomplete or missing for 12 out of 13 months test-checked at 1 plant",
+      "Similar data loss issues occurred at another plant for 11 out of 19 months",
+      "PUB took more than 12 months to resolve the issue"
+    ],
+    "root_cause": "The scope of works in all 3 maintenance contracts did not include the extraction and delivery of analyser data to PUB.",
+    "risk_impact": "There was no independent check on the water quality data provided by the PPP plant operators for the months with data loss before PUB made payments.",
+    "cia_impact": [
+      "Integrity",
+      "Availability"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "Data loss affected independent water quality monitoring over an extended period, but compensating controls provided adequate assurance.",
+    "criteria_breached": [],
+    "management_response": "PUB informed AGO that it had taken steps to resolve the issues and that compensating measures, such as strict control over partners' IT systems and sending water samples for independent testing, provided adequate assurance over water quality.",
+    "evidence": [
+      {
+        "pdf_page": 49,
+        "quote": "However, AGO noted that the scope of works in all 3 contracts for the maintenance of the analysers did not include the extraction and delivery of analyser data to PUB.",
+        "printed_page": "38",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 50,
+        "quote": "As a result, there was no independent check on the water quality data provided by the PPP plant operators for the months with data loss before PUB made payments.",
+        "printed_page": "39",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 50,
+        "quote": "AGO noted that despite making efforts to rectify the loss of PUB analyser data, PUB took more than 12 months to resolve the issue.",
+        "printed_page": "39",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2024_25-07",
+    "report_id": "fy2024_25",
+    "fiscal_year": "FY2024/25",
+    "verification": "verified"
+  },
+  {
+    "observation_title": "Sampling Approach for Checks on First Fund Requisitions Not Working as Intended",
+    "ministry": "Ministry of Trade and Industry",
+    "entity": "Agency for Science, Technology and Research",
+    "system": "iGrants",
+    "audit_type": "IT application controls",
+    "control_domain": "Application controls and system validation",
+    "secondary_domains": [],
+    "issue_summary": "The sampling logic in the iGrants system failed to select certain first Fund Requisitions for sampling checks when budget revisions occurred, resulting in seven first Fund Requisitions being auto-approved without required verification.",
+    "key_facts": [
+      "5 first FRs (disbursements totalling $721,400) were auto-approved in the iGrants system",
+      "Another 2 first FRs (disbursements totalling $1.69 million) were confirmed to be auto-approved without sample checks",
+      "In total, 7 first FRs (disbursements totalling $2.41 million) were auto-approved without being sample-checked"
+    ],
+    "root_cause": "The affected FRs were due to rare scenarios, which involved budget revisions, that were not considered when the sampling logic was built into the iGrants system.",
+    "risk_impact": "As the 7 FRs were not selected as samples by iGrants, the intended checks to ensure Host Institutions do not request excessive grant amounts in the first FR were not carried out.",
+    "cia_impact": [
+      "Integrity"
+    ],
+    "severity": "Medium",
+    "severity_rationale": "This was an IT application control gap creating a realistic risk of unverified grant disbursements, but with no evidence that improper payments actually occurred.",
+    "criteria_breached": [],
+    "management_response": "A*STAR reviewed and obtained covering approval for the 7 FRs, updated the sampling logic in iGrants in April 2025 to account for budget revision scenarios, and deployed a dashboard in January 2025 to monitor sampling logic behaviour.",
+    "evidence": [
+      {
+        "pdf_page": 76,
+        "quote": "AGO performed data analysis on 260 first FRs and found 5 first FRs (disbursements totalling $721,400) that were auto-approved in the iGrants system when these FRs should have been selected for sampling checks based on A*STAR’s intent.",
+        "printed_page": "64",
+        "match_score": 100.0,
+        "verified": true
+      },
+      {
+        "pdf_page": 76,
+        "quote": "Following AGO’s audit, A*STAR further investigated and confirmed that another 2 first FRs (disbursements totalling $1.69 million) from RIE 2025 were similarly auto-approved without being sample-checked.",
+        "printed_page": "64",
+        "match_score": 100.0,
+        "verified": true
+      }
+    ],
+    "id": "fy2024_25-08",
+    "report_id": "fy2024_25",
+    "fiscal_year": "FY2024/25",
+    "verification": "verified"
+  }
+]

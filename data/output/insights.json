@@ -1,0 +1,993 @@
+{
+  "id": 5,
+  "report_ids": [],
+  "status": "done",
+  "error": null,
+  "data": {
+    "executive_summary": "Across the four audit reports from FY2021/22 to FY2024/25, AGO identified 48 IT control findings across 17 public sector entities, comprising 20 High severity and 28 Medium severity findings. The domain with the highest number of control failures was application controls and system validation, accounting for 17 findings across all four report years and causing multi-million dollar grant and benefit over-disbursements. Recurring systemic vulnerabilities were observed in privileged access management (8 findings) and account provisioning (7 findings), characterized by misconfigured sudo permissions, shared database administrator accounts, and severe offboarding delays that enabled unauthorized post-exit logins. Furthermore, logging and activity monitoring was frequently ineffective or neglected entirely, with entities failing to review superuser logs for years or experiencing technical SIEM integration gaps. Audit teams must prioritize testing automated offboarding integration, reviewing sudo and root configuration files, and validating system logic against non-standard edge cases during system implementation and post-policy changes.",
+    "themes": [
+      {
+        "name": "Flawed Application Logic and Edge-Case Validation Failures",
+        "summary": "System validation checks failed to prevent improper grant disbursements, overpayments, and pass sharing across 17 findings in all four report years at agencies including MINDEF, MOF, SSG, IRAS, MSF, ECDA, SportSG, and A*STAR.",
+        "why_it_matters": "Inadequate input validation and unhandled business rules directly result in significant financial loss, public fund over-disbursements, legislative breaches, and compromised public trust.",
+        "finding_ids": [
+          "fy2021_22-01",
+          "fy2021_22-02",
+          "fy2021_22-05",
+          "fy2021_22-06",
+          "fy2021_22-07",
+          "fy2022_23-01",
+          "fy2022_23-09",
+          "fy2022_23-10",
+          "fy2022_23-12",
+          "fy2023_24-01",
+          "fy2023_24-02",
+          "fy2023_24-04",
+          "fy2023_24-05",
+          "fy2023_24-06",
+          "fy2023_24-10",
+          "fy2023_24-11",
+          "fy2024_25-08"
+        ],
+        "recommendations": [
+          "Establish comprehensive test suites covering edge cases, concurrent requests, policy threshold caps, and non-standard scenarios such as budget revisions before deploying code changes.",
+          "Implement automated API integrations with authoritative central identity sources (e.g., ICA, MyInfo) rather than relying on static or delayed data tables."
+        ],
+        "audit_procedures": [
+          "Re-perform sample eligibility and payout calculation logic using SQL query scripts against production database tables to detect anomalies in statutory threshold enforcement.",
+          "Attempt concurrent pass scans or rapid duplicate application transactions in a test environment to test anti-pass sharing and race condition controls."
+        ],
+        "years": [
+          "FY2021/22",
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Agency for Science, Technology and Research",
+          "Early Childhood Development Agency",
+          "Goods and Services Tax Voucher Fund",
+          "Health Promotion Board",
+          "Inland Revenue Authority of Singapore",
+          "Ministry of Defence",
+          "Ministry of Social and Family Development",
+          "SAVER-Premium Fund",
+          "Singapore Sports Council (also known as Sport Singapore)",
+          "Singapore Tourism Board",
+          "SkillsFuture Singapore Agency"
+        ]
+      },
+      {
+        "name": "Over-Privileged Sudo Configurations and Root Command Exploitation Risks",
+        "summary": "Misconfigured security software and OS sudo utilities repeatedly granted vendor staff and administrators unrestricted root access or dangerous password-reset capabilities at PSD, STB, MSF, ECDA, and MOM.",
+        "why_it_matters": "Unrestricted sudo permissions allow low-level administrative accounts or vendor personnel to execute arbitrary root commands, alter security parameters, or compromise system integrity without auditability.",
+        "finding_ids": [
+          "fy2022_23-02",
+          "fy2022_23-16",
+          "fy2023_24-07",
+          "fy2023_24-12",
+          "fy2024_25-02",
+          "fy2024_25-03",
+          "fy2024_25-04"
+        ],
+        "recommendations": [
+          "Enforce strict command-level explicit whitelisting in sudoers files and prohibit wildcards on binary commands that permit shell escapes or user password modifications.",
+          "Restrict root account logins strictly to local server consoles for emergency scenarios and enforce automated post-use password rotation."
+        ],
+        "audit_procedures": [
+          "Obtain `/etc/sudoers` and drop-in configuration files from all production servers and inspect allowed command paths for wildcards, `/usr/bin/passwd`, or binary execution rights.",
+          "Inspect `/var/log/secure` or SSH log configurations to verify if direct remote SSH logins using the root account are explicitly disabled."
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Early Childhood Development Agency",
+          "Ministry of Manpower",
+          "Ministry of Social and Family Development",
+          "Public Service Division",
+          "Singapore Tourism Board"
+        ]
+      },
+      {
+        "name": "Ineffective Offboarding and Delayed Account Deactivation",
+        "summary": "Delays ranging from months to years in deactivating accounts of resigned staff, terminated vendors, and deceased individuals occurred at MSF, HPB, PA, SportSG, and ECDA, leading to unauthorized post-exit logins.",
+        "why_it_matters": "Active residual accounts provide an unmonitored attack vector for former employees or unauthorized third parties to access sensitive case data, claim benefits, or execute fraudulent payments.",
+        "finding_ids": [
+          "fy2021_22-03",
+          "fy2021_22-08",
+          "fy2022_23-07",
+          "fy2023_24-03",
+          "fy2023_24-14"
+        ],
+        "recommendations": [
+          "Integrate all agency user directories directly with the Whole-of-Government Central Accounts Management (CAM) system for automated HR-triggered deactivations.",
+          "Implement automated death-registry data feeds to immediately lock member accounts upon registration of death."
+        ],
+        "audit_procedures": [
+          "Extract active user account lists from target applications and cross-reference user IDs and national IDs against HR termination records and registry death records.",
+          "Query user audit login logs for any account authentication events occurring after documented employee last-day-of-service dates."
+        ],
+        "years": [
+          "FY2021/22",
+          "FY2022/23",
+          "FY2023/24"
+        ],
+        "entities": [
+          "Community Care Endowment Fund",
+          "Early Childhood Development Agency",
+          "Health Promotion Board",
+          "People's Association",
+          "Singapore Sports Council (also known as Sport Singapore)"
+        ]
+      },
+      {
+        "name": "Superuser Activity Logging Deficiencies and Omitted Monitoring Reviews",
+        "summary": "Agencies such as PSD, STB, MSF, ECDA, and MOM failed to conduct regular reviews of privileged user logs, missed critical modules, or experienced SIEM log dropouts.",
+        "why_it_matters": "Without timely review of privileged actions, unauthorized system alterations, data breaches, or administrative abuses remain completely undetected.",
+        "finding_ids": [
+          "fy2022_23-05",
+          "fy2022_23-18",
+          "fy2023_24-08",
+          "fy2023_24-09",
+          "fy2023_24-13",
+          "fy2024_25-05"
+        ],
+        "recommendations": [
+          "Automate privileged log ingestion into SIEM tools with real-time alert rules for privilege escalation, setting changes, and critical module updates.",
+          "Establish mandatory independent monthly log review protocols that cover all privileged user types, including OS, database, and application administrators."
+        ],
+        "audit_procedures": [
+          "Inspect SIEM agent configurations on application/database servers to verify active syslog transmission and verify log continuity across the entire audit review period.",
+          "Sample monthly privileged log review sign-off records and check whether reported log extracts included critical system configuration modules."
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Early Childhood Development Agency",
+          "Ministry of Manpower",
+          "Ministry of Social and Family Development",
+          "Public Service Division",
+          "Singapore Tourism Board"
+        ]
+      },
+      {
+        "name": "Excessive Access Permissions and Segregation of Duties Failures",
+        "summary": "Excessive administrative rights, shared superuser credentials, and unrestricted cross-case access were granted to vendor staff, intranet users, and case officers at PSD, STB, MSF, and IPTO.",
+        "why_it_matters": "Overly broad access rights bypass basic segregation of duties, allowing individuals to view or manipulate unauthorized case files, whitelist records, or cryptographic keys without detection.",
+        "finding_ids": [
+          "fy2022_23-06",
+          "fy2022_23-13",
+          "fy2022_23-14",
+          "fy2022_23-15",
+          "fy2024_25-01"
+        ],
+        "recommendations": [
+          "Enforce role-based access control (RBAC) ensuring users are strictly restricted to assigned case files and functional job requirements.",
+          "Prohibit account sharing across administrators and assign unique traceable user credentials with mandatory MFA for database and server administration."
+        ],
+        "audit_procedures": [
+          "Extract active database user accounts and check for shared generic administrator IDs or non-DBA users possessing `SYSDBA` or DBA privileges.",
+          "Perform access entitlement tests comparing officer case assignments against database/application read and write access tables."
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Insolvency and Public Trustee’s Office",
+          "Public Service Division",
+          "Singapore Tourism Board"
+        ]
+      },
+      {
+        "name": "Deficiencies in Third-Party IT Vendor Oversight and Contract Management",
+        "summary": "Agencies including PSD, STB, ECDA, and PUB suffered control lapses due to reliance on vendor manual collation, incomplete contract operational terms, and unverified vendor administrative actions.",
+        "why_it_matters": "Outsourcing operational management does not transfer ultimate risk; unmonitored vendor staff can introduce misconfigurations or leave operational systems unmaintained.",
+        "finding_ids": [
+          "fy2022_23-04",
+          "fy2023_24-12",
+          "fy2024_25-06",
+          "fy2024_25-07"
+        ],
+        "recommendations": [
+          "Incorporate explicit service level requirements in vendor contracts for data extraction, alert system maintenance, and account collation reports.",
+          "Institute independent agency oversight to independently verify vendor technical configurations and security logs."
+        ],
+        "audit_procedures": [
+          "Review IT vendor maintenance contracts to confirm that scopes explicitly cover alert monitoring, data delivery pipelines, and account access reviews.",
+          "Sample vendor administrative tasks and verify whether prior agency written authorization exists for each executed configuration change."
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Early Childhood Development Agency",
+          "Public Service Division",
+          "Public Utilities Board"
+        ]
+      }
+    ],
+    "recurring_issues": [
+      {
+        "issue": "Severe Delays in Offboarding User Accounts Post-Exit",
+        "pattern": "Recurred across FY2021/22 to FY2023/24 at MSF (SSNet), HPB, PA, SportSG, and ECDA due to manual offboarding procedures and lack of automated interface with central Whole-of-Government accounts systems.",
+        "finding_ids": [
+          "fy2021_22-03",
+          "fy2021_22-08",
+          "fy2022_23-07",
+          "fy2023_24-03",
+          "fy2023_24-14"
+        ],
+        "years": [
+          "FY2021/22",
+          "FY2022/23",
+          "FY2023/24"
+        ],
+        "entities": [
+          "Community Care Endowment Fund",
+          "Early Childhood Development Agency",
+          "Health Promotion Board",
+          "People's Association",
+          "Singapore Sports Council (also known as Sport Singapore)"
+        ]
+      },
+      {
+        "issue": "Misconfigured Sudo Commands Granting Excessive Privilege Escalation",
+        "pattern": "Recurred across FY2022/23 to FY2024/25 across PSD, STB, MSF, ECDA, and MOM due to default vendor setups granting unrestricted root command execution or password-change privileges.",
+        "finding_ids": [
+          "fy2022_23-02",
+          "fy2022_23-16",
+          "fy2023_24-07",
+          "fy2023_24-12",
+          "fy2024_25-02"
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Early Childhood Development Agency",
+          "Ministry of Manpower",
+          "Ministry of Social and Family Development",
+          "Public Service Division",
+          "Singapore Tourism Board"
+        ]
+      },
+      {
+        "issue": "Omission or Ineffectiveness of Privileged Activity Log Reviews",
+        "pattern": "Observed across FY2022/23 to FY2024/25 at PSD, STB, MSF, ECDA, and MOM caused by missing review procedures, SIEM technical dropouts, or reliance on vendors.",
+        "finding_ids": [
+          "fy2022_23-05",
+          "fy2022_23-18",
+          "fy2023_24-08",
+          "fy2023_24-09",
+          "fy2023_24-13",
+          "fy2024_25-05"
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Early Childhood Development Agency",
+          "Ministry of Manpower",
+          "Ministry of Social and Family Development",
+          "Public Service Division",
+          "Singapore Tourism Board"
+        ]
+      },
+      {
+        "issue": "System Logic and Validation Failure in Benefit Eligibility and Payouts",
+        "pattern": "Persisted across all four report years (FY2021/22 to FY2024/25) at MINDEF, MOF, SSG, IRAS, MSF, ECDA, and A*STAR due to unhandled edge cases, statutory cap omissions, and lagging external data.",
+        "finding_ids": [
+          "fy2021_22-01",
+          "fy2021_22-02",
+          "fy2021_22-05",
+          "fy2021_22-06",
+          "fy2022_23-01",
+          "fy2022_23-10",
+          "fy2023_24-04",
+          "fy2023_24-05",
+          "fy2023_24-06",
+          "fy2023_24-10",
+          "fy2024_25-08"
+        ],
+        "years": [
+          "FY2021/22",
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Agency for Science, Technology and Research",
+          "Early Childhood Development Agency",
+          "Goods and Services Tax Voucher Fund",
+          "Inland Revenue Authority of Singapore",
+          "Ministry of Defence",
+          "Ministry of Social and Family Development",
+          "SAVER-Premium Fund",
+          "SkillsFuture Singapore Agency"
+        ]
+      }
+    ],
+    "key_insights": [
+      {
+        "insight": "Deactivating automated validation rules to resolve system false positives creates massive latent vulnerability windows resulting in significant over-disbursements.",
+        "finding_ids": [
+          "fy2023_24-11"
+        ],
+        "years": [
+          "FY2023/24"
+        ],
+        "entities": [
+          "Early Childhood Development Agency"
+        ]
+      },
+      {
+        "insight": "Post-implementation stabilization periods and policy changes represent peak vulnerability windows where agencies grant broad access rights or introduce system misconfigurations.",
+        "finding_ids": [
+          "fy2022_23-01",
+          "fy2022_23-06"
+        ],
+        "years": [
+          "FY2022/23"
+        ],
+        "entities": [
+          "Public Service Division",
+          "SAVER-Premium Fund"
+        ]
+      },
+      {
+        "insight": "Omission of detailed data pipelines and alert delivery tasks from maintenance contracts creates operational blind spots where critical IT alert systems fail silently for over a year.",
+        "finding_ids": [
+          "fy2024_25-06",
+          "fy2024_25-07"
+        ],
+        "years": [
+          "FY2024/25"
+        ],
+        "entities": [
+          "Public Utilities Board"
+        ]
+      },
+      {
+        "insight": "Operational convenience is repeatedly prioritized over Segregation of Duties (SoD), leading to broad case officer access across all case records regardless of assignment.",
+        "finding_ids": [
+          "fy2022_23-13",
+          "fy2022_23-14",
+          "fy2024_25-01"
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Insolvency and Public Trustee’s Office",
+          "Singapore Tourism Board"
+        ]
+      },
+      {
+        "insight": "Shared superuser accounts among vendor database administrators remain common, completely eliminating individual accountability and rendering audit trails ineffective.",
+        "finding_ids": [
+          "fy2022_23-15",
+          "fy2023_24-08"
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2023/24"
+        ],
+        "entities": [
+          "Ministry of Social and Family Development",
+          "Singapore Tourism Board"
+        ]
+      },
+      {
+        "insight": "Manual collation of account lists across complex systems causes agencies to omit large classes of accounts or abandon periodic access reviews altogether.",
+        "finding_ids": [
+          "fy2022_23-04",
+          "fy2022_23-17"
+        ],
+        "years": [
+          "FY2022/23"
+        ],
+        "entities": [
+          "Public Service Division",
+          "Singapore Tourism Board"
+        ]
+      }
+    ],
+    "focus_areas": [
+      {
+        "area": "System Sudo and Root Privilege Escalation Control Verification",
+        "priority": "High",
+        "rationale": "Sudo configuration errors and password-reset permissions remain widespread across MOM, ECDA, MSF, PSD, and STB, providing vendors and users with unmonitored root privileges.",
+        "finding_ids": [
+          "fy2022_23-02",
+          "fy2022_23-16",
+          "fy2023_24-07",
+          "fy2023_24-12",
+          "fy2024_25-02",
+          "fy2024_25-03",
+          "fy2024_25-04"
+        ],
+        "years": [
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Early Childhood Development Agency",
+          "Ministry of Manpower",
+          "Ministry of Social and Family Development",
+          "Public Service Division",
+          "Singapore Tourism Board"
+        ]
+      },
+      {
+        "area": "Automated Interfacing for HR Offboarding and Death Registry Synchronization",
+        "priority": "High",
+        "rationale": "Failure to automate account removal has consistently enabled unauthorized logins, fraudulent facility access, and illegal payment creations across multiple years.",
+        "finding_ids": [
+          "fy2021_22-03",
+          "fy2021_22-08",
+          "fy2022_23-07",
+          "fy2023_24-03",
+          "fy2023_24-14"
+        ],
+        "years": [
+          "FY2021/22",
+          "FY2022/23",
+          "FY2023/24"
+        ],
+        "entities": [
+          "Community Care Endowment Fund",
+          "Early Childhood Development Agency",
+          "Health Promotion Board",
+          "People's Association",
+          "Singapore Sports Council (also known as Sport Singapore)"
+        ]
+      },
+      {
+        "area": "Pre-Implementation Edge-Case Logic and System Rule Testing",
+        "priority": "High",
+        "rationale": "Application logic flaws represent 35.4% of total audit findings (17 of 48) and are the primary driver of direct financial loss and grant over-disbursements.",
+        "finding_ids": [
+          "fy2021_22-01",
+          "fy2021_22-06",
+          "fy2022_23-10",
+          "fy2023_24-06",
+          "fy2023_24-10",
+          "fy2024_25-08"
+        ],
+        "years": [
+          "FY2021/22",
+          "FY2022/23",
+          "FY2023/24",
+          "FY2024/25"
+        ],
+        "entities": [
+          "Agency for Science, Technology and Research",
+          "Early Childhood Development Agency",
+          "Inland Revenue Authority of Singapore",
+          "Ministry of Defence",
+          "Ministry of Social and Family Development",
+          "SkillsFuture Singapore Agency"
+        ]
+      },
+      {
+        "area": "IT Operations Maintenance Contract Scope and Alert Monitoring Reviews",
+        "priority": "Medium",
+        "rationale": "Vendor contracts frequently lack explicit requirements for alert monitoring and data extraction, leading to unmaintained infrastructure and long-term missing audit data.",
+        "finding_ids": [
+          "fy2024_25-06",
+          "fy2024_25-07"
+        ],
+        "years": [
+          "FY2024/25"
+        ],
+        "entities": [
+          "Public Utilities Board"
+        ]
+      }
+    ],
+    "stats": {
+      "reports": [
+        "FY2021/22",
+        "FY2022/23",
+        "FY2023/24",
+        "FY2024/25"
+      ],
+      "total_findings": 48,
+      "by_year": {
+        "FY2021/22": 8,
+        "FY2022/23": 18,
+        "FY2023/24": 14,
+        "FY2024/25": 8
+      },
+      "by_severity": {
+        "High": 20,
+        "Medium": 28
+      },
+      "by_verification": {
+        "verified": 48
+      },
+      "domains": {
+        "Application controls and system validation": {
+          "total": 17,
+          "by_year": {
+            "FY2021/22": 5,
+            "FY2022/23": 4,
+            "FY2023/24": 7,
+            "FY2024/25": 1
+          },
+          "years_present": 4,
+          "entities": [
+            "Agency for Science, Technology and Research",
+            "Early Childhood Development Agency",
+            "Goods and Services Tax Voucher Fund",
+            "Health Promotion Board",
+            "Inland Revenue Authority of Singapore",
+            "Ministry of Defence",
+            "Ministry of Social and Family Development",
+            "SAVER-Premium Fund",
+            "Singapore Sports Council (also known as Sport Singapore)",
+            "Singapore Tourism Board",
+            "SkillsFuture Singapore Agency"
+          ]
+        },
+        "Privileged access management": {
+          "total": 8,
+          "by_year": {
+            "FY2021/22": 0,
+            "FY2022/23": 3,
+            "FY2023/24": 3,
+            "FY2024/25": 2
+          },
+          "years_present": 3,
+          "entities": [
+            "Early Childhood Development Agency",
+            "Ministry of Manpower",
+            "Ministry of Social and Family Development",
+            "Public Service Division",
+            "Singapore Tourism Board"
+          ]
+        },
+        "Account provisioning and removal": {
+          "total": 7,
+          "by_year": {
+            "FY2021/22": 2,
+            "FY2022/23": 3,
+            "FY2023/24": 2,
+            "FY2024/25": 0
+          },
+          "years_present": 3,
+          "entities": [
+            "Community Care Endowment Fund",
+            "Early Childhood Development Agency",
+            "Health Promotion Board",
+            "Inland Revenue Authority of Singapore",
+            "People's Association",
+            "Singapore Sports Council (also known as Sport Singapore)",
+            "Singapore Tourism Board"
+          ]
+        },
+        "Logging and monitoring of activities": {
+          "total": 5,
+          "by_year": {
+            "FY2021/22": 0,
+            "FY2022/23": 2,
+            "FY2023/24": 1,
+            "FY2024/25": 2
+          },
+          "years_present": 3,
+          "entities": [
+            "Early Childhood Development Agency",
+            "Ministry of Manpower",
+            "Public Service Division",
+            "Public Utilities Board",
+            "Singapore Tourism Board"
+          ]
+        },
+        "Periodic access review": {
+          "total": 4,
+          "by_year": {
+            "FY2021/22": 1,
+            "FY2022/23": 3,
+            "FY2023/24": 0,
+            "FY2024/25": 0
+          },
+          "years_present": 2,
+          "entities": [
+            "Community Care Endowment Fund",
+            "Public Service Division",
+            "Singapore Tourism Board"
+          ]
+        },
+        "Security configuration and settings": {
+          "total": 2,
+          "by_year": {
+            "FY2021/22": 0,
+            "FY2022/23": 1,
+            "FY2023/24": 0,
+            "FY2024/25": 1
+          },
+          "years_present": 2,
+          "entities": [
+            "Ministry of Manpower",
+            "Singapore Tourism Board"
+          ]
+        },
+        "Excessive access and segregation of duties": {
+          "total": 2,
+          "by_year": {
+            "FY2021/22": 0,
+            "FY2022/23": 0,
+            "FY2023/24": 1,
+            "FY2024/25": 1
+          },
+          "years_present": 2,
+          "entities": [
+            "Insolvency and Public Trustee’s Office",
+            "Ministry of Social and Family Development"
+          ]
+        },
+        "Data protection and encryption": {
+          "total": 1,
+          "by_year": {
+            "FY2021/22": 0,
+            "FY2022/23": 1,
+            "FY2023/24": 0,
+            "FY2024/25": 0
+          },
+          "years_present": 1,
+          "entities": [
+            "Public Service Division"
+          ]
+        },
+        "Change management": {
+          "total": 1,
+          "by_year": {
+            "FY2021/22": 0,
+            "FY2022/23": 1,
+            "FY2023/24": 0,
+            "FY2024/25": 0
+          },
+          "years_present": 1,
+          "entities": [
+            "Inland Revenue Authority of Singapore"
+          ]
+        },
+        "Other IT control": {
+          "total": 1,
+          "by_year": {
+            "FY2021/22": 0,
+            "FY2022/23": 0,
+            "FY2023/24": 0,
+            "FY2024/25": 1
+          },
+          "years_present": 1,
+          "entities": [
+            "Public Utilities Board"
+          ]
+        }
+      },
+      "recurring_domains": [
+        "Application controls and system validation",
+        "Privileged access management",
+        "Account provisioning and removal",
+        "Logging and monitoring of activities",
+        "Periodic access review",
+        "Security configuration and settings",
+        "Excessive access and segregation of duties"
+      ],
+      "entities": [
+        {
+          "entity": "Singapore Tourism Board",
+          "ministry": "Ministry of Trade and Industry",
+          "years": [
+            "FY2022/23"
+          ],
+          "count": 7,
+          "domains": {
+            "Application controls and system validation": 1,
+            "Account provisioning and removal": 1,
+            "Periodic access review": 2,
+            "Privileged access management": 1,
+            "Security configuration and settings": 1,
+            "Logging and monitoring of activities": 1
+          }
+        },
+        {
+          "entity": "Ministry of Social and Family Development",
+          "ministry": "Ministry of Social and Family Development",
+          "years": [
+            "FY2023/24"
+          ],
+          "count": 6,
+          "domains": {
+            "Application controls and system validation": 3,
+            "Privileged access management": 2,
+            "Excessive access and segregation of duties": 1
+          }
+        },
+        {
+          "entity": "Public Service Division",
+          "ministry": "Prime Minister’s Office",
+          "years": [
+            "FY2022/23"
+          ],
+          "count": 5,
+          "domains": {
+            "Privileged access management": 2,
+            "Periodic access review": 1,
+            "Logging and monitoring of activities": 1,
+            "Data protection and encryption": 1
+          }
+        },
+        {
+          "entity": "Early Childhood Development Agency",
+          "ministry": "Ministry of Social and Family Development",
+          "years": [
+            "FY2023/24"
+          ],
+          "count": 5,
+          "domains": {
+            "Application controls and system validation": 2,
+            "Privileged access management": 1,
+            "Logging and monitoring of activities": 1,
+            "Account provisioning and removal": 1
+          }
+        },
+        {
+          "entity": "Inland Revenue Authority of Singapore",
+          "ministry": "Ministry of Finance",
+          "years": [
+            "FY2022/23"
+          ],
+          "count": 4,
+          "domains": {
+            "Change management": 1,
+            "Application controls and system validation": 2,
+            "Account provisioning and removal": 1
+          }
+        },
+        {
+          "entity": "Ministry of Manpower",
+          "ministry": "Ministry of Manpower",
+          "years": [
+            "FY2024/25"
+          ],
+          "count": 4,
+          "domains": {
+            "Privileged access management": 2,
+            "Security configuration and settings": 1,
+            "Logging and monitoring of activities": 1
+          }
+        },
+        {
+          "entity": "Singapore Sports Council (also known as Sport Singapore)",
+          "ministry": "Ministry of Culture, Community and Youth",
+          "years": [
+            "FY2023/24"
+          ],
+          "count": 3,
+          "domains": {
+            "Application controls and system validation": 2,
+            "Account provisioning and removal": 1
+          }
+        },
+        {
+          "entity": "Community Care Endowment Fund",
+          "ministry": "Ministry of Social and Family Development",
+          "years": [
+            "FY2021/22"
+          ],
+          "count": 2,
+          "domains": {
+            "Account provisioning and removal": 1,
+            "Periodic access review": 1
+          }
+        },
+        {
+          "entity": "SkillsFuture Singapore Agency",
+          "ministry": "Ministry of Education",
+          "years": [
+            "FY2021/22"
+          ],
+          "count": 2,
+          "domains": {
+            "Application controls and system validation": 2
+          }
+        },
+        {
+          "entity": "Health Promotion Board",
+          "ministry": "Ministry of Health",
+          "years": [
+            "FY2021/22"
+          ],
+          "count": 2,
+          "domains": {
+            "Application controls and system validation": 1,
+            "Account provisioning and removal": 1
+          }
+        },
+        {
+          "entity": "Public Utilities Board",
+          "ministry": "Ministry of Sustainability and the Environment",
+          "years": [
+            "FY2024/25"
+          ],
+          "count": 2,
+          "domains": {
+            "Logging and monitoring of activities": 1,
+            "Other IT control": 1
+          }
+        },
+        {
+          "entity": "Ministry of Defence",
+          "ministry": "Ministry of Defence",
+          "years": [
+            "FY2021/22"
+          ],
+          "count": 1,
+          "domains": {
+            "Application controls and system validation": 1
+          }
+        },
+        {
+          "entity": "Goods and Services Tax Voucher Fund",
+          "ministry": "Ministry of Finance",
+          "years": [
+            "FY2021/22"
+          ],
+          "count": 1,
+          "domains": {
+            "Application controls and system validation": 1
+          }
+        },
+        {
+          "entity": "SAVER-Premium Fund",
+          "ministry": "Ministry of Defence",
+          "years": [
+            "FY2022/23"
+          ],
+          "count": 1,
+          "domains": {
+            "Application controls and system validation": 1
+          }
+        },
+        {
+          "entity": "People's Association",
+          "ministry": "Ministry of Culture, Community and Youth",
+          "years": [
+            "FY2022/23"
+          ],
+          "count": 1,
+          "domains": {
+            "Account provisioning and removal": 1
+          }
+        },
+        {
+          "entity": "Insolvency and Public Trustee’s Office",
+          "ministry": "Ministry of Law",
+          "years": [
+            "FY2024/25"
+          ],
+          "count": 1,
+          "domains": {
+            "Excessive access and segregation of duties": 1
+          }
+        },
+        {
+          "entity": "Agency for Science, Technology and Research",
+          "ministry": "Ministry of Trade and Industry",
+          "years": [
+            "FY2024/25"
+          ],
+          "count": 1,
+          "domains": {
+            "Application controls and system validation": 1
+          }
+        }
+      ],
+      "criteria_breached": [
+        [
+          "Government Instruction Manual on ICT and Smart Systems Management",
+          6
+        ],
+        [
+          "HRP Guidelines",
+          2
+        ],
+        [
+          "ActiveSG terms of use",
+          2
+        ],
+        [
+          "GSTV Fund Regulations",
+          1
+        ],
+        [
+          "Government Technology Agency (GovTech)'s advisory dated 1 June 2020",
+          1
+        ],
+        [
+          "COVID-19 (Temporary Measures) (Rental and Related Measures) Regulations 2020",
+          1
+        ],
+        [
+          "Rental Support Scheme Implementation Document",
+          1
+        ],
+        [
+          "IRAS IT policy",
+          1
+        ],
+        [
+          "STB's Standard Operating Procedures",
+          1
+        ],
+        [
+          "GovTech advisory dated 1 June 2020",
+          1
+        ],
+        [
+          "Central Provident Fund Act 1953",
+          1
+        ],
+        [
+          "GovTech's advisory dated 1 June 2020",
+          1
+        ],
+        [
+          "Government Instruction Manual on ICT & Smart Systems Management",
+          1
+        ],
+        [
+          "Principle of least privilege",
+          1
+        ],
+        [
+          "MOM's security guide",
+          1
+        ],
+        [
+          "MOM requirement to restrict root account use to emergency situations and change root account password after each login",
+          1
+        ],
+        [
+          "MOM standard operating procedures",
+          1
+        ]
+      ],
+      "systems": [
+        "ActiveSG (Singapore Sports Council (also known as Sport Singapore))",
+        "Baby Bonus Online (Ministry of Social and Family Development)",
+        "Centre Management System (Early Childhood Development Agency)",
+        "GPLS system (Ministry of Social and Family Development)",
+        "HRP (Public Service Division)",
+        "PTO system, Insolvency Case Management Platform, Corporate Insolvency Management System 2 (Insolvency and Public Trustee’s Office)",
+        "PUB Analyser System (Public Utilities Board)",
+        "PUB Water Quality Analysers (Public Utilities Board)",
+        "STAN (Singapore Tourism Board)",
+        "STAN Database (DB) (Singapore Tourism Board)",
+        "Social Service Net (Community Care Endowment Fund)",
+        "Volunteer Management System, Grassroots E-Mart System II, Grassroots Financial Accounting System (People's Association)",
+        "WINS-EP (Ministry of Manpower)",
+        "iGrants (Agency for Science, Technology and Research)"
+      ]
+    },
+    "excluded_unverified": []
+  },
+  "created_at": "2026-10-30T03:33:01+00:00"
+}
